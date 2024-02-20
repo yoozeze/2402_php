@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+* {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    /* 글꼴 지정 */
+    /* font-family: '고딕','바탕'; */
+    /* font-size: 20px; */
+}
+
+h1 {
+    /* 글자 크기 변경 */
+    /* 키워드로 조절 (사용 안함) */
+        /* font-size: medium; */
+    /* px로 조절 */
+        /* font-size: 100px; */
+    /* em으로 조절 (부모요소 기준 배율) */
+        /* font-size: 2em; */
+    /* rem으로 조절 (최상위 요소 기준 배율) */
+        font-size: 2rem;
+}
+
+p {
+    /* 폰트 굵기 */
+        /* font-weight: bold; */
+    /* 숫자를 통해 조절 (100~900, 100단위) */
+        font-weight: 900;
+}
