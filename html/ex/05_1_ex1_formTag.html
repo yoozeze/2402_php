@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        form 태그 : 정보를 제출하기 위한 태그
+     -->
+    <form action="">
+        <!-- input 태그 : 다양한 방법으로 데이터를 받기위한 태그 -->
+        <!-- 속성 -->
+        <!-- text : 일반적인 텍스트를 입력할 수 있는 값 -->
+        <label for="input-id">ID</label>
+        <input type="text" id="input-id" required placeholder="ID를 입력하세요.">
+        <br>
+        <label for="inpu-password">PW</label>
+        <!-- type="password" : 패스워드를 입력할 수 있는 값 -->
+        <input type="password" id="inpu-password" required>
+        <br>
+        <!-- type="email" : 이메일을 입력하고 형식 체크 -->
+        <!-- name : 일치시킬 것 -->
+        <input type="email" readonly value="이메일이다.">
+        <br><br>
+
+        <input type="checkbox" name="food" id="chk-1">
+        <label for="chk-1">돈까스</label><br>
+        <input type="checkbox" name="food" id="chk-2">
+        <label for="chk-2">짜장면</label><br>
+        <input type="checkbox" name="food" id="chk-3">
+        <label for="chk-3">샌드위치</label><br>
+        <br><br>
+        <input type="radio" name="fruit" id="radio-1">
+        <label for="radio-1">사과</label><br>
+        <input type="radio" name="fruit" id="radio-2">
+        <label for="radio-2">바나나</label>
+
+        <br>
+        <input type="date">
+        <br>
+        <input type="range" min="0" max="10">
+        <br>
+        <input type="number" min="0" max="10"><br>
+
+        <!-- input button은 요즘은 잘 안쓴다. -->
+        <!-- <input type="button" value="인풋 버튼"><br>
+        <input type="submit" value="인풋 서브밋"><br>
+        <input type="reset" value="인풋 리셋"> -->
+
+        <textarea cols="30" rows="10"></textarea>
+        <!-- 꺽쇠 열고 닫음을 꼭 붙이기 -->
+        <br>
+        <select name="poketmon" id="poketmon">
+            <option value="0">피카츄</option>
+            <option value="1">라이츄</option>
+            <option value="2">파이리</option>
+        </select>
+        <br>
+        <fieldset>
+            <legend>정보 입력</legend>
+            <label for="id">ID : </label>
+            <input type="text">
+        </fieldset>
+        <br>
+        <button type="button">button</button>
+        <button type="submit">submit</button>
+        <!-- form에있는 action에 기반하여 정보 보냄 -->
+        <button type="reset">reset</button>
+    </form>
+
+</body>
+</html>

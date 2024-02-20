@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>회원가입을 환영합니다</h1>
+    <form action="">
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    <label for="input-id">아이디</label>
+                    <input type="text" name="input-id" id="input-id" required placeholder="4자 ~ 10자 사이, 공백없이" minlength="4" maxlength="10">
+                </li>
+                <li>
+                    <label for="input-email">이메일</label>
+                    <input type="email" name="input-email" id="input-email">
+                </li>
+                <li><label for="input-pw">비밀번호</label>
+                    <input type="password" id="input-pw" required placeholder="문자와 숫자, 특수기호 포함">
+                </li>
+                <li>
+                    <label for="input-rpw">비밀번호 확인</label>
+                    <input type="password" name="input-rpw" id="input-rpw">
+                <li>
+                    <label for="log">가입 경로</label>
+                    <select name="log" id="log">
+                        <option value="0">기타</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="memo">메모</label>
+                    <textarea name="memo" id="memo" cols="30" rows="10"placeholder="남길 말씀이 있다면여기에"></textarea>
+                </li>    
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트와 새로운 소식</legend>
+            <input type="radio" name="event" id="radio-1">
+            <label for="radio-1">메일 수신</label>
+            <input type="radio" name="event" id="radio-2">
+            <label for="radio-2">메일 수신 안 함</label>
+        </fieldset>
+        <button type="submit">가입하기</button>
+        <button type="reset">취소</button>
+    </form>
+</body>
+</html>
