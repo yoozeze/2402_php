@@ -1,0 +1,23 @@
+ul {
+    list-style-type: none;
+}
+.li-color {
+    color: #ad3000;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 3rem;
+
+}
+
+.span-style {
+    color: black;
+    font-size: 1rem;
+}
+.box {
+    border: 1px solid #000;
+}
+.span-style1 {
+    color: #ad3000;
+    font-weight: 900;
+    font-size: 2rem;
+}
