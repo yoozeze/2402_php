@@ -1,0 +1,17 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+    border: 5px dotted #000;
+    padding: 10px;
+}
+    /* 배경색 범위 지정 */
+.bk-color1 {
+    background-clip: border-box;
+}
+.bk-color2 {
+    background-clip: padding-box;
+}
+.bk-color3 {
+    background-clip: content-box;
+}

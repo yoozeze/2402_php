@@ -1,0 +1,32 @@
+.main1, .main2, .main3, .main4 {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0;
+}
+.footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 590px;
+}
+.main1 {
+    top: 10px;
+    left: 10px;
+}
+.main2 {
+    top: -311px;
+    left: 350px;
+}
+.main3 {
+    bottom: 290px;
+    left: 10px;
+}
+.main4 {
+    bottom: 611px;
+    left: 350px;
+}

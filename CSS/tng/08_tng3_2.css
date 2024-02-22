@@ -1,0 +1,19 @@
+.main1, .main2, .main3, .main4 {
+    border: 1px dotted black;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+.main1, .main2, .main3, .main4 {
+    float: left;
+}
+.main3 {
+    clear: left;
+}
+.footer {
+    clear: left;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
