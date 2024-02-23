@@ -1,0 +1,19 @@
+div {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+.line-1 {
+    background: linear-gradient(60deg, white, blue 20%, white);
+}
+/* circle : 영역에 상관없이 원형 */
+/* .cir-1 {
+    height: 50px;
+    background: radial-gradient(circle closest-corner, white, blue 50%);
+
+} */
+.cir-1 {
+    height: 50px;
+    background: radial-gradient(circle at 0% 20%, white, blue, white);
+
+}

@@ -1,0 +1,22 @@
+/* 연결 선택자 (Combination Selector)
+공백, >, +, ~ 등 결합자(combinator)를 이용해 특정 요소를 선택
+ */
+ /* 후손 결합자 : 공백 결합자를 이용해서 선택 */
+/* header span {
+    color: blue;
+} */
+header div span {
+    color: blue;
+}
+/* 자식 결합자 : '>' 결합자를 이용해서 자식요소를 선택 */
+header > span {
+    color: coral;
+}
+/* 인접 형제 결합자 : '+' 결합자를 이용해서 첫번째 형제를 선택*/
+header + span {
+    color: blueviolet;
+}
+/* 일반 형제 결합자 : '~' 결합자를 이용해서 모든 형제를 선택 */
+header ~ span {
+    color: brown;
+}
