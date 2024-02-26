@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 1rem;
+}
+fieldset {
+    padding: 1rem;
+    background-image: url('../img/엉클샘.jpg');
+    background-size: contain;
+    /* 사진의 크기에 따라 contain이냐 cover냐 선택 */
+    background-repeat: no-repeat;
+}
+legend {
+    font-size: 2rem;
+    font-weight: 900;
+    color: magenta;
+}
+.require::before {
+    content: '*';
+    color: red;
+}
+input:focus, textarea:focus {
+    border: 3px solid red;
+    outline: none;
+}
+input[name="radio"]:checked + label {
+    color: red;
+}
+input, textarea {
+    background-color: transparent;
+    /* background: none; 위와 같음*/
+}
+label[for="req"] {
+    vertical-align: top;
+}
+.chk-content {
+    background-color: black;
+    color: white;
+    display: none;
+}
+button:hover + .chk-content {
+    display: inline;
+}

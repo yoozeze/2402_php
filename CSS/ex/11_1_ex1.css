@@ -1,0 +1,26 @@
+div {
+    background-image: url('../img/cat.png');
+    width: 500px;
+    height: 500px;
+    /* animation: test 2s; */
+}
+
+div:hover {
+    animation: test 2s;
+}
+
+@keyframes test {
+    /* from {
+        transform: transform(0);
+    }
+    to {
+        transform: transformX(200vw);
+    } */
+    
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(2);
+    }
+}

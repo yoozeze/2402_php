@@ -1,0 +1,16 @@
+/* 
+선택자::before
+    특정 요소의 컨텐츠 앞에 새로운 요소를 삽입  
+ */
+.require::before {
+    content: '*';
+    color: red;
+}
+/* 
+선택자::after
+    특정 요소의 컨텐츠 뒤에 새로운 요소를 삽입
+*/
+.require::after {
+    content: '중요';
+    color: blue;
+}

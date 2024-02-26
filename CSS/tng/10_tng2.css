@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    background-image: url('../img/docker.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 350px;
+    width: 500px;
+    padding: 10px;
+    margin: 10px;
+}
+legend {
+    color: magenta;
+}
+div {
+    margin: 10px;
+}
+.id::before, .age::before, .sex::before {
+    content: '*';
+    color: red;
+}
+input:focus, textarea:focus {
+    border: 3px solid red;
+    outline: none;
+}
+input[type="radio"]:checked + label {
+    color: red;
+}
+#memo {
+    vertical-align: text-top;
+}
+textarea, input {
+    background: none;
+}
+p {
+    display: none;
+    background-color: black;
+    color: white;
+}
+.send:hover + p {
+    display: inline-block;
+}
+/* input[type="number"] {
+    width: 162px;
+} */
+
+/* textarea:focus {
+    border: 3px solid red;
+    outline: none; 
+}*/
+/* .age::before{
+    content: '*';
+    color: red;
+} */
+/* .sex::before {
+    content: '*';
+    color: red;
+} */
