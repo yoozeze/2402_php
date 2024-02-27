@@ -1,0 +1,51 @@
+/* 
+flex box
+    행 또는 열로 항목의 무리를 배치하는 1차원 레이아웃 시스템
+    주축 : 가로 (기본)
+    교차축 : 세로
+*/
+
+.container {
+    background-color: blueviolet;
+    /* padding: 10px 0; */
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-direction > 주축의 방향을 조절하는 속성 */
+    /* flex-direction: row-reverse 주축 방향 시작이 오른쪽에서 시작 */
+    /* flex-direction: column-reverse 주축 방향 시작이 아래에서 시작 */ 
+    
+    /* flex-wrap : 항목의 줄을 바꿀지 말지 지정 */
+    /* flex-wrap: wrap; */
+
+    flex-flow: row wrap;
+    /* flex-flow : direction과 wrap을 한번에 지정 */
+
+    justify-content: space-around;
+    /* justify-content 주축을 기준으로 정렬 */
+    /* justify-content: flex-start > 주축 시작점에서 정렬 */
+    /* justify-content: flex-end > 주축 끝점에서 정렬 */
+    /* justify-content: center > 중앙정렬 */
+    /* justify-content: space-between > 주축 시작 점과 끝점을 맞춘 후 간격 조절 */
+    /* justify-content: space-around > 전체적인 여백 */
+
+    height: 200px;
+    /* align-items: stretch; */
+    /* align-items : 교차축을 기준으로 정렬 */
+    /* align-items: flex-start > 교차축 시작점에서 정렬 */
+    /* align-items: flex-end > 교차축은 끝점에서 정렬 */
+    /* align-items: stretch > 전체영역을 분배 */
+
+    align-content: space-around;
+    /* align-content: 교차축 여러줄을 어떻게 정렬할 건가*/
+
+}
+.item {
+    width: 150px;
+    height: 50px;
+    border: 1px solid #000;
+    background-color: skyblue;
+}
+/* .item5 {
+    align-self: flex-end;
+    align-self : 교차축 기준으로 하나의 아이템을 정렬
+} */

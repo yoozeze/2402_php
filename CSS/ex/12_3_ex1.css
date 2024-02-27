@@ -1,0 +1,41 @@
+.container {
+    background-color: gray;
+    display: grid;
+    /* grid-template-clums > 행과 너비를 조절 */
+    /* fr단위 : 그리드 시스템에서 남은 영역을 비율로써 나누어 지정 */
+    grid-template-columns: 50px 1fr 1fr;
+
+    /* grid-template-rows > 열과 높이를 조절 */
+    grid-template-rows: 1fr 2fr 3fr 1fr;
+}
+.item {
+    background-color: skyblue;
+    border: 1px solid black;
+}
+
+.container_repeat {
+    display: grid;
+    /* repeat(반보횟수, 반복값) */
+    /* minmax(최소값, 최대값) */
+    /* auto-fit, auto-fill > 자동으로 컬럼 수를 조절 */
+    /* auto-fit > 아이템영역 늘어남 */
+    /* auto-fill > 빈셀 생성 */
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 5px;
+}
+
+.container_area {
+    background-color: gray;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.item1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+}
+.item7 {
+    grid-column: 3 / 4;
+    grid-row: 4 / 6;
+}
