@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: white;
+    display: none;
+}
+.container {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+}
+.header {
+    background-color: skyblue;
+    min-width: 100vh;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+    gap: 10px;
+}
+.nav_container {
+    margin: 10px;
+}
+.menu_title:hover + .hover {
+    display: inline-block;
+    background-color: rgb(45, 135, 170);
+}
+.menu_list {
+    padding: auto;
+    background-color: rgb(45, 135, 170);
+}
+

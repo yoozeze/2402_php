@@ -20,7 +20,7 @@ flex box
     flex-flow: row wrap;
     /* flex-flow : direction과 wrap을 한번에 지정 */
 
-    justify-content: space-around;
+    /* justify-content: space-around; */
     /* justify-content 주축을 기준으로 정렬 */
     /* justify-content: flex-start > 주축 시작점에서 정렬 */
     /* justify-content: flex-end > 주축 끝점에서 정렬 */
