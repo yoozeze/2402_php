@@ -196,6 +196,12 @@ FROM (
 )
 WHERE tit.to_date = NOW();
 
+
+UPDATE titles tit
+SET 
+	title = '신입'
+WHERE 
+	tit.emp_no = 500000;
 -- 8. 최고 연봉 사원과 최저 연봉 사원의 사번과 이름을 출력해 주세요
 SELECT
 	rank_tbl.*
