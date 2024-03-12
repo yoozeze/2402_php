@@ -1,0 +1,23 @@
+body {
+    border: 1px solid #000;
+    width: 500px;
+    height: 500px;
+}
+.position1, .position2, .position3 {
+    border: 1px solid #000;
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.position1 {
+    top: 8%;
+    left: 8%;
+}
+.position2 {
+    top: 30%;
+    left: 8%;
+}
+.position3 {
+    bottom: 40%;
+    left: 50%;
+}
