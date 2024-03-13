@@ -131,10 +131,3 @@ print_r($arr_food);
 $arr_food["피자"]=["밀가루","토마토","치즈","바질"];
 print_r($arr_food);
 
-
-$num = 10;
-// echo $num++."\n";
-// echo ++$num."\n";
-// echo $num--."\n";
-echo --$num."\n"; 
-echo $num."\n";
