@@ -3,8 +3,10 @@
 echo "while 문\n";
 $num = 1;
 while ($num < 101){
+    if($num % 3 !==0){
     echo "$num 입니다. ";
-    $num += 2;
+    }
+    $num++;
 }
 
 // foreach
