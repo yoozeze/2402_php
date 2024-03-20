@@ -83,5 +83,10 @@ class Shark {
 }
 $objShark = new Shark("상어");
 $objShark->swim("백상아리 ");
-$objShark->breathe();
+$i = 0;
+
+while($i < 5) {
+    $objShark->breathe();
+    $i++;
+}
 
