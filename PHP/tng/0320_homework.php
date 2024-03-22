@@ -18,6 +18,16 @@ foreach($arr_num as $val){
     }
 }
 
+// foreach 2
+echo "\nforeach 문2\n";
+$arr = range(1, 100);
+foreach($arr as $val){
+    if(($val % 3) === 0){
+        continue;
+    }
+    echo "$val 입니다. ";
+}
+
 // for 문
 echo "\nfor 문\n";
 for($i = 1; $i < 101; $i++){
