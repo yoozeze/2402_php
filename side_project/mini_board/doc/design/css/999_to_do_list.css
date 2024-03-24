@@ -54,6 +54,7 @@ input, textarea {
 
 textarea {
     resize: none;
+    font-size: 1rem;
 }
 
 main {
@@ -65,7 +66,7 @@ main {
 
 .main1{
     display: grid;
-    grid-template-rows: 0.1fr 2fr 2fr;
+    grid-template-rows: 0.2fr 2fr 2fr;
     gap: 10px;
 }
 
@@ -73,6 +74,7 @@ main {
     background-color: #FFFAFF;
     border: 2px solid #840670;
     border-radius: 5px;
+    padding: 10px;
 }
 
 .title {
@@ -86,4 +88,37 @@ main {
     display: grid;
     grid-template-columns: 0.8fr auto;
     gap: 10px;
+}
+
+.goals-content{
+    text-align: center;
+}
+.list{
+    display: grid;
+    grid-template-columns: 0.1fr auto;
+    padding: 10px 20px;
+    gap: 20px;
+}
+
+.list > textarea {
+    background-color: #f0d6e8;
+}
+
+input[class^="chk-"] + label {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #43083A;
+    cursor: pointer;
+}
+
+input[class^="chk-"]:checked + label {
+    background-color: #C784B2;
+}
+
+input[class^="chk-"] {
+    display: none;
+}
+
+.main-border {
+    text-align: center;
 }
