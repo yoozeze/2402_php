@@ -47,7 +47,6 @@ h1 {
 }
 
 input, textarea {
-    width: 90%;
     background-color: transparent;
     border-style: none;
 }
@@ -82,6 +81,7 @@ main {
     font-weight: 800;
     text-align: center;
     padding: 10px;
+    justify-content: space-between;
 }
 
 .main2{
@@ -109,10 +109,14 @@ input[class^="chk-"] + label {
     height: 20px;
     border: 2px solid #43083A;
     cursor: pointer;
+    color: transparent;
+    text-align: center;
+    line-height: 10px;
 }
 
 input[class^="chk-"]:checked + label {
     background-color: #C784B2;
+    color: #43083A;
 }
 
 input[class^="chk-"] {
