@@ -138,3 +138,7 @@ main [class^="main-"]{
 .center {
     text-align: center;
 }
+
+.now_page_color {
+    background-color: #4f6ffa;
+}

@@ -54,6 +54,7 @@ input, textarea {
 textarea {
     resize: none;
     font-size: 1rem;
+    outline: none;
 }
 
 main {
@@ -117,6 +118,10 @@ input[class^="chk-"] + label {
 input[class^="chk-"]:checked + label {
     background-color: #C784B2;
     color: #43083A;
+}
+
+.chk-box0:checked ~ .in {
+    text-decoration: line-through;
 }
 
 input[class^="chk-"] {

@@ -4,7 +4,7 @@ require_once( $_SERVER["DOCUMENT_ROOT"]."/config.php"); // 설정 파일 호출
 require_once(FILE_LIB_DB);                              // DB관련 라이브러리
 $list_cnt = 5;                                          // 한 페이지 최대 표시 수
 $page_num = 1;                                          // 페이지 번호 초기화
-
+$btn_page_cnt = 5;                                      // 블록 갯수
 try {
     // DB Connect
     $conn = my_db_conn();  // connection 함수 호출
@@ -20,6 +20,11 @@ try {
     $offset = $list_cnt * ($page_num - 1);                  // OFFSET
     $prev_page_num = ($page_num - 1) < 1 ? 1 : ($page_num - 1);     // 이전 버튼 페이지 번호
     $next_page_num = ($page_num + 1) > $max_page_num ? $max_page_num : ($page_num + 1); // 다음 버튼 페이지 번호
+
+    // 페이징
+    $start_page = ceil($page_num / $btn_page_cnt) * $btn_page_cnt -($btn_page_cnt - 1);
+    $end_page = $start_page + ($btn_page_cnt - 1);
+    $end_page = $end_page > $max_page_num ? $max_page_num : $end_page;
 
     // 게시글 리스트 조회
     $arr_param = [
@@ -55,7 +60,7 @@ try {
 
     <main>
         <div class="main-top">
-            <a href="./insert.html" class="a-button">글 작성</a>
+            <a href="./insert.php" class="a-button">글 작성</a>
         </div>
         <div class="main-middle">
             <div class="item list-head">
@@ -78,9 +83,10 @@ try {
         <div class="main-bottom">
             <a href="./list.php?page=<?php echo $prev_page_num ?>" class="a-button small-button">이전</a>
             <?php
-            for($num = 1; $num <= $max_page_num; $num++){
+            // for($num = 1; $num <= $max_page_num; $num++){
+            for($i = $start_page; $i <= $end_page; $i++){
             ?>
-                <a href="./list.php?page=<?php echo $num ?>" class="a-button small-button"><?php echo $num ?></a>
+            <a href="./list.php?page=<?php echo $i ?>" class="a-button small-button <?php echo $i == $page_num ? "now_page_color" : ""; ?>"><?php echo $i ?></a>
             <?php
             }
             ?>
