@@ -8,20 +8,20 @@ USE test;
 -- 컬럼명- 데이터타입-제약조건
 -- 회원 정보 테이블
 CREATE TABLE users (
-	user_ID 			INT 				PRIMARY KEY AUTO_INCREMENT
+	user_ID 		INT 			PRIMARY KEY AUTO_INCREMENT
 	,user_name 		VARCHAR(50) 	NOT NULL 
 	,user_tel 		VARCHAR(20) 	NOT NULL COMMENT '- 제외 숫자'
 	,user_addr 		VARCHAR(150) 	NOT NULL
-	,user_birth_at DATE 				NOT NULL COMMENT 'YYYY-MM-DD'
-	,user_gender 	CHAR(1) 			NOT NULL COMMENT '0 : 남자, 1 : 여자'
+	,user_birth_at 	DATE 			NOT NULL COMMENT 'YYYY-MM-DD'
+	,user_gender 	CHAR(1) 		NOT NULL COMMENT '0 : 남자, 1 : 여자'
 	,created_at 	DATETIME 		NOT NULL DEFAULT CURRENT_TIMESTAMP() COMMENT 'YYYY-MM-DD hh:mi:ss'
 	,deleted_at 	DATETIME 		NULL COMMENT 'YYYY-MM-DD hh:mi:ss'
 );
 -- 상품 목록 테이블
 CREATE TABLE products (
-	product_ID 		INT 				PRIMARY KEY AUTO_INCREMENT
+	product_ID 		INT 			PRIMARY KEY AUTO_INCREMENT
 	,product_name 	VARCHAR(200) 	NOT NULL 
-	,product_price INT 				NOT NULL 
+	,product_price 	INT 			NOT NULL 
 	,created_at 	DATETIME 		NOT NULL DEFAULT CURRENT_TIMESTAMP() COMMENT 'YYYY-MM-DD hh:mi:ss'
 	,update_at 		DATETIME 		NOT NULL DEFAULT CURRENT_TIMESTAMP() COMMENT 'YYYY-MM-DD hh:mi:ss'
 	,deleted_at 	DATETIME 		NULL COMMENT 'YYYY-MM-DD hh:mi:ss'
@@ -29,7 +29,7 @@ CREATE TABLE products (
 -- 주문 테이블
 CREATE TABLE orders (
 	order_ID 		INT				PRIMARY KEY AUTO_INCREMENT
-	,user_ID			INT				NOT NULL 
+	,user_ID		INT				NOT NULL 
 	,product_ID		INT				NOT NULL 
 	,payment_type 	CHAR(1)			NOT NULL DEFAULT '0' COMMENT '0 : 결제전, 1 : 카드, 2 : 계좌이체'
 );
