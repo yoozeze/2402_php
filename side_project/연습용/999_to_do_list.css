@@ -3,9 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 a {
-    width: 70px;
     text-decoration: none;
+    color: #43083A;
+    font-weight: 900;
+    display: block;
+}
+
+.header-top > a {
+    width: 70px;
     border-radius: 0px 0px 5px 5px;
     background-color: #C784B2;
     border-left: 1px solid #840670;
@@ -18,6 +25,14 @@ a {
     display: inline-block;
     grid-template-columns: 1fr 1fr 1fr;
     font-size: 0.8rem;
+}
+
+.main-border > a {
+    text-align: center;
+    line-height: 50px;
+    color: #43083A;
+    font-size: 1rem;
+    font-weight: 900;
 }
 
 a:hover {
@@ -57,11 +72,19 @@ textarea {
     outline: none;
 }
 
-main {
+.container_list {
     height: 600px;
     display: grid;
     grid-template-columns: 0.3fr auto;
     gap: 10px;
+}
+
+.main-top {
+    margin: 100px auto;
+    color: #43083A;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
 }
 
 .main1{
@@ -130,4 +153,25 @@ input[class^="chk-"] {
 
 .main-border {
     text-align: center;
+}
+
+.container_delete {
+    display: grid;
+    grid-template-columns: 0.1fr 0.1fr;
+    gap: 50px;
+    justify-content: center
+}
+
+.box > a {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 55px;
+}
+
+.container_index {
+    display: grid;
+    grid-template-columns: 0.3fr auto;
+    gap: 10px;
+    margin: 10px;
 }

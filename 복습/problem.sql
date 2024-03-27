@@ -49,13 +49,46 @@ VALUES
 ,('1', 'title2', 'content2')
 ,('1', 'title3', 'content3')
 ,('1', 'title4', 'content4');
+INSERT INTO boards (user_id, title, content)
+VALUES
+('2', 'title1', 'content1')
+,('2', 'title2', 'content2')
+,('2', 'title3', 'content3');
+INSERT INTO boards (user_id, title, content)
+VALUES
+('3', 'title1', 'content1')
+,('3', 'title2', 'content2');
 
 -- 5.
+INSERT INTO wishlists (user_id, board_id)
+VALUES
+('1', '5')
+,('1', '6')
+,('2', '1')
+,('2', '2')
+,('2', '3')
+,('2', '4')
+,('2', '7')
+,('3', '1')
+,('3', '2')
+,('3', '3')
+,('3', '4')
+,('3', '5')
+,('3', '6')
+,('3', '7')
+,('3', '8')
+,('3', '9');
+
 
 -- 6.
-DELETE FROM users
-WHERE name = '홍길동';
+UPDATE users
+SET 
+	deleted_at = DATE(NOW())
+WHERE
+	NAME = '홍길동';
+	
 -- 7.
 DROP TABLE wishlists;
+
 -- 8. 
 DROP DATABASE problem;

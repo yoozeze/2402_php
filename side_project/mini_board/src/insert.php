@@ -38,12 +38,12 @@ if (REQUEST_METHOD === "POST") {
             "title" => $title
             ,"content" => $content
         ];
-        // $result = db_insert_boards($conn, $arr_param); // TODO : 주석해제 까먹지마
+        $result = db_insert_boards($conn, $arr_param); // TODO : 주석해제 까먹지마
 
         // 글 작성 예외 처리 (로직을 잘 작성했다면 에러안남)
-        // if($result !== 1){
-        //     throw new Exception("Insert Boards count");
-        // }  // 주석해제 까먹지마2
+        if($result !== 1){
+            throw new Exception("Insert Boards count");
+        }
 
         // 커밋
         $conn->commit();
