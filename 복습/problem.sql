@@ -12,7 +12,7 @@ CREATE TABLE users(
 
 CREATE TABLE boards(
 	id 				INT 				PRIMARY KEY AUTO_INCREMENT
-	,user_id			INT
+	,user_id			INT				NOT NULL
 	,title 			VARCHAR(100) 	NOT NULL 
 	,content 		VARCHAR(1000) 	NOT NULL 
 	,created_at 	DATE 				NOT NULL DEFAULT CURRENT_DATE()
@@ -32,8 +32,13 @@ CREATE TABLE wishlists(
 	,FOREIGN KEY (board_id) REFERENCES boards(id)
 );
 
+-- ALTER 사용
+ALTER TABLE boards ADD CONSTRAINT fk_boards_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+ALTER TABLE wishlists ADD CONSTRAINT fk_wishlists_user_id FOREIGN KEY (user_id) REFERENCES users(id);
+ALTER TABLE wishlists ADD CONSTRAINT fk_wishlists_boards_id FOREIGN KEY (board_id) REFERENCES boards(id);
+
 -- 2.
-ALTER TABLE boards ADD COLUMN views INT NOT NULL DEFAULT '0';
+ALTER TABLE boards ADD COLUMN views INT NOT NULL DEFAULT 0;
 
 -- 3.
 INSERT INTO users(name, email)
@@ -45,39 +50,39 @@ VALUES
 -- 4.
 INSERT INTO boards (user_id, title, content)
 VALUES
-('1', 'title1', 'content1')
-,('1', 'title2', 'content2')
-,('1', 'title3', 'content3')
-,('1', 'title4', 'content4');
+(1, 'title1', 'content1')
+,(1, 'title2', 'content2')
+,(1, 'title3', 'content3')
+,(1, 'title4', 'content4');
 INSERT INTO boards (user_id, title, content)
 VALUES
-('2', 'title1', 'content1')
-,('2', 'title2', 'content2')
-,('2', 'title3', 'content3');
+(2, 'title1', 'content1')
+,(2, 'title2', 'content2')
+,(2, 'title3', 'content3');
 INSERT INTO boards (user_id, title, content)
 VALUES
-('3', 'title1', 'content1')
-,('3', 'title2', 'content2');
+(3, 'title1', 'content1')
+,(3, 'title2', 'content2');
 
 -- 5.
 INSERT INTO wishlists (user_id, board_id)
 VALUES
-('1', '5')
-,('1', '6')
-,('2', '1')
-,('2', '2')
-,('2', '3')
-,('2', '4')
-,('2', '7')
-,('3', '1')
-,('3', '2')
-,('3', '3')
-,('3', '4')
-,('3', '5')
-,('3', '6')
-,('3', '7')
-,('3', '8')
-,('3', '9');
+(1, 5)
+,(1, 6)
+,(2, 1)
+,(2, 2)
+,(2, 3)
+,(2, 4)
+,(2, 7)
+,(3, 1)
+,(3, 2)
+,(3, 3)
+,(3, 4)
+,(3, 5)
+,(3, 6)
+,(3, 7)
+,(3, 8)
+,(3, 9);
 
 
 -- 6.

@@ -53,7 +53,7 @@ if (REQUEST_METHOD === "POST") {
         exit;
 
     } catch (\Throwable $e) {
-        if(!empty($conn)){
+        if(!empty($conn) && $conn->inTransaction()){
             $conn->rollBack();
         }
         echo $e->getMessage();

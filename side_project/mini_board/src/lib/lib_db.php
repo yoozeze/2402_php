@@ -15,12 +15,12 @@ function my_db_conn(){
 function db_select_boards_cnt(&$conn){
     // sql 작성
     $sql =
-    " SELECT "	
-	."  COUNT(no) as cnt "
-    ." FROM "
-	."  boards "
-    ." WHERE "
-	."  deleted_at IS NULL "	
+        " SELECT "	
+        ."  COUNT(no) as cnt "
+        ." FROM "
+        ."  boards "
+        ." WHERE "
+        ."  deleted_at IS NULL "	
     ;
 
     // Query 실행
@@ -68,7 +68,7 @@ function db_insert_boards(&$conn, &$array_param){
         ."  :title "	
         ."  ,:content "	
         ." ) "
-        ;		
+    ;		
     
     // Query 실행
     $stmt = $conn->prepare($sql);
@@ -104,17 +104,35 @@ function db_select_boards_no(&$conn, &$array_param){
 // pk로 특정 게시글 삭제 처리
 function db_delete_boards_no(&$conn, &$array_param){
     $sql =
-    " UPDATE boards "	
-    ." SET "
-    ."  deleted_at = NOW() "
-    ." WHERE "	
-    ."  no = :no "
-;
+        " UPDATE boards "	
+        ." SET "
+        ."  deleted_at = NOW() "
+        ." WHERE "	
+        ."  no = :no "
+    ;
     // Query 실행
     $stmt = $conn->prepare($sql);
     $stmt->execute($array_param);
 
     // 리턴 (업데이트했을때 영향받은 갯수)
     return $stmt->rowCount();
+}
 
+// pk로 특정 레코드 수정
+function db_update_boards_no(&$conn, &$array_param){
+    $sql =
+        " UPDATE boards	 "	
+        ."  SET "
+        ."  title = :title "
+        ."  ,content = :content "
+        ."  ,updated_at = NOW() "
+        ." WHERE "
+        ."  no = :no "
+    ;
+    // Query 실행
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+
+    // 리턴 (업데이트했을때 영향받은 갯수)
+    return $stmt->rowCount();
 }

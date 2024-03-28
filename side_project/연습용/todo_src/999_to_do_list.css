@@ -175,3 +175,19 @@ input[class^="chk-"] {
     gap: 10px;
     margin: 10px;
 }
+
+.small-button {
+    display: inline-block;
+    background-color: #C784B2;
+    color: #FFFAFF;
+}
+
+.main-bottom {
+    text-align: center;
+    margin: 30px;
+}
+
+.now_page_color {
+    background-color: #FFFAFF;
+    color: #43083A;
+}
