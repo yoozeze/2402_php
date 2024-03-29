@@ -28,8 +28,9 @@ function db_select_todo_cnt(&$conn){
 function db_select_todo_paging(&$conn, &$array_param){
     $sql =
         " SELECT "
-        ."  today "
-        ." ,day_goals "
+        ."  no "
+        ."  ,today "
+        ."  ,day_goals "
         ." FROM "
         ."  todolist "
         ." WHERE "
@@ -46,21 +47,77 @@ function db_select_todo_paging(&$conn, &$array_param){
     return $result;
 }
 
+// pk로 게시글 정보 조회 
+function db_select_todo_no(&$conn, &$array_param){
+    $sql = 
+        " SELECT "
+        ."  no "
+        ."  ,today "
+        ."  ,day_goals "
+        ."  ,weekly_goals "
+        ." FROM "
+        ."  todolist "
+        ." WHERE "
+        ."  no = :no "
+    ;
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+    $result = $stmt->fetchAll();
+
+    return $result;
+}
+
+// Insert row to boards 게시판 테이블 레코드 작성처리
 function db_insert_todo(&$conn, &$array_param){
     $sql =
         " INSERT INTO todolist( "
         ."  today "
         ."  ,day_goals "
-        ." ,weekly_goals "
+        ."  ,weekly_goals "
         ." ) "
         ." VALUES( "
         ."  :today "
-        ."  :day_goals "
-        ."  :weekly_goals "
+        ."  ,:day_goals "
+        ."  ,:weekly_goals "
         ." ) "
-        ;
+    ;
+
     $stmt = $conn->prepare($sql);
     $stmt->execute($array_param);
+
+    return $stmt->rowCount();
+}
+
+// pk로 특정 게시글 삭제 처리
+function db_delete_todo_no(&$conn, &$array_param){
+    $sql =
+        " UPDATE todolist "
+        ." SET "
+        ."  deleted_at = NOW() "
+        ." WHERE "
+        ."  no = :no "
+    ;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+
+    return $stmt->rowCount();
+}
+
+// pk로 특정 레코드 수정
+function db_update_todo_no(&$conn, &$array_param){
+    $sql =
+        " UPDATE todolist "
+        ."  SET "
+        ."   today = :today "
+        ."  ,day_goals = :day_goals "
+        ."  ,weekly_goals = :weekly_goals "
+        ."  ,updated_at = NOW() "
+        ." WHERE "
+        ."  no = :no "
+    ;
+    $stmt = $conn->prepare($sql);
+    $stmt->execut($array_param);
 
     return $stmt->rowCount();
 }

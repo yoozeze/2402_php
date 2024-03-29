@@ -47,7 +47,6 @@ function db_select_boards_paging(&$conn, &$array_param){
         ."  no DESC "
         ." LIMIT :list_cnt OFFSET :offset "	
     ;
-
     // Query 실행
     $stmt = $conn->prepare($sql);
     $stmt->execute($array_param);

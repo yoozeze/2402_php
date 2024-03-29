@@ -35,6 +35,7 @@ try {
 } catch (\Throwable $e) {
     echo $e->getMessage();
     exit;
+    
 } finally {
     if(!empty($conn)){
         $conn = null;
@@ -61,10 +62,10 @@ try {
         ?>
             <div class="container_index">
                 <div class="day-list">
-                    <a href="./todo_list.php" class="main-border"><?php echo $item["today"]; ?></a>
+                    <div class="main-border"><?php echo $item["today"]; ?></div>
                 </div>
                 <div class="day-goals">
-                    <a href="./todo_list.php" class="main-border"><?php echo $item["day_goals"] ?></a>
+                    <a href="./todo_list.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="main-border"><?php echo $item["day_goals"] ?></a>
                 </div>
             </div>
         <?php
