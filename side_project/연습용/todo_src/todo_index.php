@@ -32,6 +32,9 @@ try {
         ,"offset" => $offset
     ];
     $result = db_select_todo_paging($conn, $arr_param);
+
+    
+    
 } catch (\Throwable $e) {
     echo $e->getMessage();
     exit;
@@ -55,7 +58,7 @@ try {
     <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
 </head>
 <body>
-    <?php require_once(FILE_HEADER); ?>
+    <?php require_once(FILE_HEADER_INDEX); ?>
     <main>
         <?php 
         foreach($result as $item) {

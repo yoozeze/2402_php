@@ -46,7 +46,7 @@ try {
             $arr_err_param[] = "no";
         }
         if(count($arr_err_param) > 0 ){
-            throw new Exception("Parametr Error : ".implod(", ", $arr_err_param));
+            throw new Exception("Parametr Error : ".implode(", ", $arr_err_param));
         }
 
         // Transaction 시작
@@ -75,6 +75,7 @@ try {
     }
     echo $e->getMessage();
     exit;
+
 } finally {
     if(!empty($conn)){
         $conn = null;
@@ -108,7 +109,7 @@ try {
                     <button type="submit" class="yesno">YES</button>
                 </div>
                 <div class="box">
-                    <a href="./todo_index.php?no=<?php echo $no; ?>&page=<?php echo $page; ?>" class="main-border">no</a>
+                    <a href="./todo_index.php?no=<?php echo $no; ?>&page=<?php echo $page; ?>" class="main-border">NO</a>
                 </div>
             </div>
         </form>
