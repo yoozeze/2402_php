@@ -141,21 +141,12 @@ try {
                                 <textarea class="in" name="content" id="content" rows="6"></textarea>
                             </div>
                         </div>
-                        <div class="main-border">
-                            <label class="goals-title" for="content">
-                                <div class="title">WEEKLY GOALS</div>
-                                <?php echo $item["weekly_goals"] ?>
-                            </label>
-                            <div class="goals-content">
-                                <textarea name="content" id="content" rows="6"></textarea>
-                            </div>
-                        </div>
                     <?php
                     }
                     ?>
                 </div>
                 <div class="main2">
-                    <div class="main-border">0
+                    <div class="main-border">
                         <div class="title">TO DO</div>
                         <div class="list">
                             <input type="checkbox" name="chk-box" id="chk-box" class="chk-box0">
@@ -172,10 +163,6 @@ try {
                             </label>
                             <textarea class="in" name="to-do-content" id="to-do-content" cols="3" rows="1"></textarea>
                         </div>
-                    </div>
-                    <div class="main-border">
-                        <div class="title">NOTES</div>
-                        <textarea name="content" id="content" rows="6"></textarea>
                     </div>
                     <div class="save">
                         <button type="submit" class="save-button">SAVE</button>

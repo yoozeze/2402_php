@@ -95,14 +95,6 @@ if(REQUEST_METHOD === "POST") {
                             <textarea name="content" id="content" rows="6"></textarea>
                         </div>
                     </div>
-                    <div class="main-border">
-                        <label class="goals-title" for="content">
-                            <div class="title">WEEKLY GOALS</div>
-                        </label>
-                        <div class="goals-content">
-                            <textarea name="content" id="content" rows="6"></textarea>
-                        </div>
-                    </div>
                 </div>
                 <div class="main2">
                     <div class="main-border">
@@ -156,10 +148,6 @@ if(REQUEST_METHOD === "POST") {
                             </label>
                             <textarea class="in" name="to-do-content" id="to-do-content" cols="3" rows="1"></textarea>
                         </div>
-                    </div>
-                    <div class="main-border">
-                        <div class="title">NOTES</div>
-                        <textarea name="content" id="content" cols="7" rows="6"></textarea>
                     </div>
                     <div class="save">
                         <button type="submit" class="save-button">SAVE</button>
