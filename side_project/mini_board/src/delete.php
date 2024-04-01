@@ -77,7 +77,7 @@ try {
 } catch (\Throwable $e) {
     if(!empty($conn)){
         $conn->rollBack();
-    } 
+    }
     echo $e->getMessage();
     exit;
 } finally {
