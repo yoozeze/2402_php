@@ -155,7 +155,7 @@ try {
                     ?>
                 </div>
                 <div class="main2">
-                    <div class="main-border">
+                    <div class="main-border">0
                         <div class="title">TO DO</div>
                         <div class="list">
                             <input type="checkbox" name="chk-box" id="chk-box" class="chk-box0">
