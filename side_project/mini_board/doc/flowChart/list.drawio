@@ -1,0 +1,343 @@
+<mxfile host="app.diagrams.net" modified="2024-04-01T03:49:00.881Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="-WAGWhlqdhTPlf5-Gz6s" version="24.2.1" type="device">
+  <diagram name="페이지-1" id="EY5a86rHO_MoC2um8FG7">
+    <mxGraphModel dx="1070" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-77" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-1" target="nrJ2jpgzrQL7o0-USNgo-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-1" value="리스트 페이지&lt;div&gt;시작&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="167" y="50" width="106" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-3" value="DB 접속" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-5" value="DB접속&lt;div&gt;예외 발생&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="171" y="230" width="98" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-1" target="nrJ2jpgzrQL7o0-USNgo-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="196" y="460" as="sourcePoint" />
+            <mxPoint x="246" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-3" target="nrJ2jpgzrQL7o0-USNgo-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="196" y="460" as="sourcePoint" />
+            <mxPoint x="246" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-9" value="예외 메세지 출력" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;size=0.4375;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1040" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-11" value="리스트 페이지&lt;div&gt;종료&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.508;exitY=0.763;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-9" target="nrJ2jpgzrQL7o0-USNgo-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="1110" as="sourcePoint" />
+            <mxPoint x="547.5" y="600" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="1310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-13" value="page 획득" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="47" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-16" value="page 파라미터 존재" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="157.5" y="360" width="125" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-18" value="1 획득" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.583;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-16" target="nrJ2jpgzrQL7o0-USNgo-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="460" y="420" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="330" y="405" />
+              <mxPoint x="330" y="425" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-21" value="NO" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-5" target="nrJ2jpgzrQL7o0-USNgo-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="460" y="420" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-26" value="YES" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-5" target="nrJ2jpgzrQL7o0-USNgo-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="460" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-28" value="NO" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-30" value="DB에서 게시글 수&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;획득&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-37" value="YES" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-16" target="nrJ2jpgzrQL7o0-USNgo-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="460" y="420" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="107" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-38" value="YES" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="nrJ2jpgzrQL7o0-USNgo-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="530" as="sourcePoint" />
+            <mxPoint x="210" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-40" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="nrJ2jpgzrQL7o0-USNgo-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="510" as="sourcePoint" />
+            <mxPoint x="320" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="330" y="530" />
+              <mxPoint x="210" y="530" />
+              <mxPoint x="107" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-41" value="페이지 관련 설정&lt;div&gt;셋팅&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-42" value="DB에서 게시글 조회" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-44" value="화면에 출력" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1169" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-46" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-41" target="nrJ2jpgzrQL7o0-USNgo-42">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="910" as="sourcePoint" />
+            <mxPoint x="440" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-47" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-42" target="nrJ2jpgzrQL7o0-USNgo-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="910" as="sourcePoint" />
+            <mxPoint x="440" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-48" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0.888;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-44" target="nrJ2jpgzrQL7o0-USNgo-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="392.5" y="1160" as="sourcePoint" />
+            <mxPoint x="222.5" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-49" value="게시글 획득&lt;div&gt;예외 발생&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="670" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-56" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-49" target="nrJ2jpgzrQL7o0-USNgo-41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="750" as="sourcePoint" />
+            <mxPoint x="420" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-57" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-30" target="nrJ2jpgzrQL7o0-USNgo-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="720" as="sourcePoint" />
+            <mxPoint x="450" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-58" value="NO" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-59" value="게시글 획득&lt;div&gt;예외 발생&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1020" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-62" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-59" target="nrJ2jpgzrQL7o0-USNgo-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="1020" as="sourcePoint" />
+            <mxPoint x="450" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-63" value="NO" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-66" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="1050" as="sourcePoint" />
+            <mxPoint x="510" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-67" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nrJ2jpgzrQL7o0-USNgo-66">
+          <mxGeometry x="0.0419" y="3" relative="1" as="geometry">
+            <mxPoint x="5" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-68" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="1050" as="sourcePoint" />
+            <mxPoint x="570" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-69" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nrJ2jpgzrQL7o0-USNgo-68">
+          <mxGeometry x="-0.08" y="-3" relative="1" as="geometry">
+            <mxPoint x="-8" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-70" value="디테일 페이지&lt;div&gt;시작&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="824" y="50" width="106" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-71" value="DB 접속" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="817" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-72" value="DB접속&lt;div&gt;예외 발생&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="828" y="250" width="98" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-73" value="page 파라미터 존재&lt;div&gt;no 파라미터 존재&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="814.5" y="390" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-76" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-70" target="nrJ2jpgzrQL7o0-USNgo-71">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="120" as="sourcePoint" />
+            <mxPoint x="230" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-78" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-71" target="nrJ2jpgzrQL7o0-USNgo-72">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="130" as="sourcePoint" />
+            <mxPoint x="240" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-79" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-72" target="nrJ2jpgzrQL7o0-USNgo-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="330" as="sourcePoint" />
+            <mxPoint x="230" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-80" value="NO" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-79">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-86" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-73" target="nrJ2jpgzrQL7o0-USNgo-92">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="620" as="sourcePoint" />
+            <mxPoint x="870" y="520" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-87" value="YES" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="nrJ2jpgzrQL7o0-USNgo-86">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-92" value="게시글 정보&lt;div&gt;획득&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="817" y="540" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-97" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-92" target="nrJ2jpgzrQL7o0-USNgo-101">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="660" as="sourcePoint" />
+            <mxPoint x="873.9999999999998" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-120" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nrJ2jpgzrQL7o0-USNgo-97">
+          <mxGeometry x="-0.143" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-101" value="화면에 출력" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+          <mxGeometry x="817" y="723.3299999999999" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-102" value="디테일 페이지&lt;div&gt;종료&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="817" y="863.3299999999999" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-105" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="877" y="790" as="sourcePoint" />
+            <mxPoint x="877" y="863" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-106" value="예외 메세지 출력" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;size=0.4375;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="544.9999999999999" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-107" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="nrJ2jpgzrQL7o0-USNgo-92">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="590" as="sourcePoint" />
+            <mxPoint x="740" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-119" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nrJ2jpgzrQL7o0-USNgo-107">
+          <mxGeometry x="0.1042" y="-2" relative="1" as="geometry">
+            <mxPoint x="30" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-108" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-72" target="nrJ2jpgzrQL7o0-USNgo-106">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="650" as="sourcePoint" />
+            <mxPoint x="1200" y="590" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1250" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-109" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nrJ2jpgzrQL7o0-USNgo-108">
+          <mxGeometry x="0.2168" y="-1" relative="1" as="geometry">
+            <mxPoint x="-169" y="-25" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-113" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.517;exitY=0.788;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-106" target="nrJ2jpgzrQL7o0-USNgo-102">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1060" y="653.3299999999999" as="sourcePoint" />
+            <mxPoint x="1110" y="603.3299999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1252" y="893.3299999999999" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-117" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="nrJ2jpgzrQL7o0-USNgo-73">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1250" y="440" as="sourcePoint" />
+            <mxPoint x="970" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-118" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nrJ2jpgzrQL7o0-USNgo-117">
+          <mxGeometry x="0.1339" y="2" relative="1" as="geometry">
+            <mxPoint x="6" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-121" value="수정 버튼 클릭" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1307" y="60" width="106" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-122" value="처리 종료" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1307" y="250" width="106" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-123" value="수정 페이지로 이동" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-124" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-121" target="nrJ2jpgzrQL7o0-USNgo-123">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1403" y="310" as="sourcePoint" />
+            <mxPoint x="1453" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nrJ2jpgzrQL7o0-USNgo-125" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="nrJ2jpgzrQL7o0-USNgo-123" target="nrJ2jpgzrQL7o0-USNgo-122">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1403" y="310" as="sourcePoint" />
+            <mxPoint x="1453" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

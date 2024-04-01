@@ -56,6 +56,7 @@ try {
         $arr_param = [
             "no" => $no
         ];
+
         $result = db_delete_todo_no($conn, $arr_param);
 
         // 삭제 예외 처리
@@ -65,7 +66,7 @@ try {
 
         $conn->commit();
 
-        header("Loction: todo_index.php");
+        header("Location: todo_index.php");
         exit;
     }
 

@@ -30,6 +30,7 @@ try {
         "no" => $no
     ];
     $result = db_select_boards_no($conn, $arr_param);
+    
     if(count($result) !== 1){
         throw new Exception("Select Boards no count");
     }
@@ -40,6 +41,7 @@ try {
 } catch (\Throwable $e) {
     echo $e->getMessage();
     exit;
+
 } finally {
     // PDO 파기
     if(!empty($conn)){

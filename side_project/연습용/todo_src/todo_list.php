@@ -20,7 +20,7 @@ try {
         if($page === ""){
             $arr_err_param[] = "page";
         }
-        if(count($arr_err_param) > 0){
+        if(count($arr_err_param) > 0 ){
             throw new Exception("parameter Error : ".implode(", ", $arr_err_param));
         }
 
@@ -44,6 +44,7 @@ try {
         $today = isset($_POST["today"]) ? $_POST["today"] : "";
         $day_goals = isset($_POST["day_goals"]) ? $_POST["day_goals"] : "";
         $weekly_goals = isset($_POST["weekly_goals"]) ? $_POST["weekly_goals"] : "";
+        $notes = isset($_POST["notes"]) ? $_POST["notes"] : "";
 
         // 파라미터 예외처리
         $arr_err_param = [];
@@ -62,6 +63,9 @@ try {
         if($weekly_goals === ""){
             $arr_err_param[] = "weekly_goals";
         }
+        if($notes === ""){
+            $arr_err_param[] = "notes";
+        }
         if(count($arr_err_param) > 0 ){
             throw new Exception("Parameter Error : ".implode(", ", $arr_err_param));
         }
@@ -73,6 +77,7 @@ try {
             ,"todayd" => $today
             ,"day_goals" => $day_goals
             ,"weekly_goals" => $weekly_goals
+            ,"notes" => $notes
         ];
         $result = db_update_todo_no($conn, $arr_param);
 
@@ -114,7 +119,9 @@ try {
 <body>
     <?php require_once(FILE_HEADER); ?>
     <main>
-        <form action="./todo_list.php" method="post">
+        <form action="./todo_update.php" method="post">
+            <input type="hidden" name="no" value="<?php echo $item["no"]; ?>">
+            <input type="hidden" name="page" value="<?php echo $page; ?>">
             <div class="container_list">
                 <div class="main1">
                     <?php 

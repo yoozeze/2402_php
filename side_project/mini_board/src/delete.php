@@ -58,6 +58,7 @@ try {
         $arr_param = [
             "no" => $no
         ];
+        
         $result = db_delete_boards_no($conn, $arr_param);
 
         // 삭제 예외 처리
