@@ -43,8 +43,10 @@ try {
         $page = isset($_POST["page"]) ? $_POST["page"] : "";
         $today = isset($_POST["today"]) ? $_POST["today"] : "";
         $day_goals = isset($_POST["day_goals"]) ? $_POST["day_goals"] : "";
-        $weekly_goals = isset($_POST["weekly_goals"]) ? $_POST["weekly_goals"] : "";
-        $notes = isset($_POST["notes"]) ? $_POST["notes"] : "";
+        $todo1 = isset($_POST["todo1"]) ? $_POST["todo1"] : "";
+        $todo2 = isset($_POST["todo2"]) ? $_POST["todo2"] : "";
+        $todo3 = isset($_POST["todo3"]) ? $_POST["todo3"] : "";
+        $todo4 = isset($_POST["todo4"]) ? $_POST["todo4"] : "";
 
         // 파라미터 예외처리
         $arr_err_param = [];
@@ -60,25 +62,25 @@ try {
         if($day_goals === ""){
             $arr_err_param[] = "day_goals";
         }
-        if($weekly_goals === ""){
-            $arr_err_param[] = "weekly_goals";
-        }
-        if($notes === ""){
-            $arr_err_param[] = "notes";
+        if($day_goals === ""){
+            $arr_err_param[] = "todo1";
         }
         if(count($arr_err_param) > 0 ){
             throw new Exception("Parameter Error : ".implode(", ", $arr_err_param));
         }
 
-        $conn->begingTransaction();
+        $conn->beginTransaction();
 
         $arr_param = [
             "no" => $no
             ,"todayd" => $today
             ,"day_goals" => $day_goals
-            ,"weekly_goals" => $weekly_goals
-            ,"notes" => $notes
+            ,"todo1" => $todo1
+            ,"todo2" => $todo2
+            ,"todo3" => $todo3
+            ,"todo4" => $todo4
         ];
+
         $result = db_update_todo_no($conn, $arr_param);
 
         if($result !== 1){
@@ -119,7 +121,7 @@ try {
 <body>
     <?php require_once(FILE_HEADER); ?>
     <main>
-        <form action="./todo_update.php" method="post">
+        <form action="./todo_index.php" method="post">
             <input type="hidden" name="no" value="<?php echo $item["no"]; ?>">
             <input type="hidden" name="page" value="<?php echo $page; ?>">
             <div class="container_list">
@@ -128,9 +130,8 @@ try {
                     foreach($result as $item) {
                     ?>
                         <div class="main-border">
-                            <label for="date" class="title">DATE</label>
+                            <label for="date" class="title date">DATE</label>
                             <?php echo $item["today"] ?>
-                            <input type="date" id="date">
                         </div>
                         <div class="main-border">
                             <label class="goals-title" for="content">
@@ -138,7 +139,7 @@ try {
                                 <?php echo $item["day_goals"] ?>
                             </label>
                             <div class="goals-content">
-                                <textarea class="in" name="content" id="content" rows="6"></textarea>
+                                <textarea class="in" name="day_goals" id="day_goals"></textarea>
                             </div>
                         </div>
                     <?php
@@ -149,19 +150,32 @@ try {
                     <div class="main-border">
                         <div class="title">TO DO</div>
                         <div class="list">
-                            <input type="checkbox" name="chk-box" id="chk-box" class="chk-box0">
-                            <label for="chk-box">
+                            <input type="checkbox" name="chk-box1" id="chk-box1" class="chk-box0">
+                            <label for="chk-box1">
                                 <div><i class="fa-solid fa-check"></i></div>
                             </label>
-                            <textarea class="in" name="to-do-content" id="to-do-content" cols="3" rows="1"></textarea>
+                            <textarea class="in" name="todo1" id="todo1" cols="3" rows="1"><?php echo $item["todo1"] ?></textarea>
                         </div>
-                        
                         <div class="list">
-                            <input type="checkbox" name="chk-box7" id="chk-box7" class="chk-box0">
-                            <label for="chk-box7">
+                            <input type="checkbox" name="chk-box2" id="chk-box2" class="chk-box0">
+                            <label for="chk-box2">
                                 <div><i class="fa-solid fa-check"></i></div>
                             </label>
-                            <textarea class="in" name="to-do-content" id="to-do-content" cols="3" rows="1"></textarea>
+                            <textarea class="in" name="todo2" id="todo2" cols="3" rows="1"></textarea>
+                        </div>
+                        <div class="list">
+                            <input type="checkbox" name="chk-box3" id="chk-box3" class="chk-box0">
+                            <label for="chk-box3">
+                                <div><i class="fa-solid fa-check"></i></div>
+                            </label>
+                            <textarea class="in" name="todo3" id="todo3" cols="3" rows="1"></textarea>
+                        </div>
+                        <div class="list">
+                            <input type="checkbox" name="chk-box4" id="chk-box4" class="chk-box0">
+                            <label for="chk-box4">
+                                <div><i class="fa-solid fa-check"></i></div>
+                            </label>
+                            <textarea class="in" name="todo4" id="todo4" cols="3" rows="1"></textarea>
                         </div>
                     </div>
                     <div class="save">

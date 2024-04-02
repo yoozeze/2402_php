@@ -7,8 +7,6 @@ if(REQUEST_METHOD === "POST") {
     try {
         $today = isset($_POST["today"]) ? trim($_POST["today"]) : "";
         $day_goals = isset($_POST["day_goals"]) ? trim($_POST["day_goals"]) : "";
-        $weekly_goals = isset($_POST["weekly_goals"]) ? trim($_POST["weekly_goals"]) : "";
-        $notes = isset($_POST["notes"]) ? trim($_POST["notes"]) : "";
 
         $arr_err_param = [];
         if($today === ""){
@@ -16,12 +14,6 @@ if(REQUEST_METHOD === "POST") {
         }
         if($day_goals === ""){
             $arr_err_param[] = "day_goals";
-        }
-        if($weekly_goals === ""){
-            $arr_err_param[] = "weekly_goals";
-        }
-        if($notes === ""){
-            $arr_err_param[] = "notes";
         }
         if(count($arr_err_param) > 0 ){
             throw new Exception("Parameter Error : ".implode(", ", $arr_err_param));
@@ -34,9 +26,8 @@ if(REQUEST_METHOD === "POST") {
         $arr_param = [
             "today" => $today
             ,"day_goals" => $day_goals
-            ,"weekly_goals" => $weekly_goals
-            ,"notes" => $notes
         ];
+        
         $result = db_insert_todo($conn, $arr_param);
 
         if($result !== 1){

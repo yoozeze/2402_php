@@ -65,7 +65,7 @@ try {
         ?>
             <div class="container_index">
                 <div class="day-list">
-                    <div class="main-border"><?php echo $item["today"]; ?></div>
+                    <div class="main-border date"><?php echo $item["today"]; ?></div>
                 </div>
                 <div class="day-goals">
                     <a href="./todo_list.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="main-border"><?php echo $item["day_goals"] ?></a>
