@@ -231,3 +231,7 @@ input[class^="chk-"] {
     border: 2px solid #840670;
     cursor: pointer;
 }
+
+.date {
+    width: 150px;
+}

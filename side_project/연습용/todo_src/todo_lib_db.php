@@ -54,7 +54,10 @@ function db_select_todo_no(&$conn, &$array_param){
         ."  no "
         ."  ,today "
         ."  ,day_goals "
-        ."  ,weekly_goals "
+        ."  ,todo1 "
+        ."  ,todo2 "
+        ."  ,todo3 "
+        ."  ,todo4 "
         ." FROM "
         ."  todolist "
         ." WHERE "
@@ -74,12 +77,18 @@ function db_insert_todo(&$conn, &$array_param){
         " INSERT INTO todolist( "
         ."  today "
         ."  ,day_goals "
-        ."  ,weekly_goals "
+        ."  ,todo1 "
+        ."  ,todo2 "
+        ."  ,todo3 "
+        ."  ,todo4 "
         ." ) "
         ." VALUES( "
         ."  :today "
         ."  ,:day_goals "
-        ."  ,:weekly_goals "
+        ."  ,:todo1 "
+        ."  ,:todo2 "
+        ."  ,:todo3 "
+        ."  ,:todo4 "
         ." ) "
     ;
 
@@ -109,13 +118,16 @@ function db_update_todo_no(&$conn, &$array_param){
     $sql =
         " UPDATE todolist "
         ."  SET "
-        ."   today = :today "
         ."  ,day_goals = :day_goals "
-        ."  ,weekly_goals = :weekly_goals "
+        ."  ,todo1 = :todo1 "
+        ."  ,todo2 = :todo2 "
+        ."  ,todo3 = :todo3 "
+        ."  ,todo4 = :todo4 "
         ."  ,updated_at = NOW() "
         ." WHERE "
         ."  no = :no "
     ;
+    
     $stmt = $conn->prepare($sql);
     $stmt->execut($array_param);
 
