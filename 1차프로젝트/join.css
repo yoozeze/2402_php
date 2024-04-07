@@ -1,0 +1,302 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 시작 페이지 */
+
+.line {
+    /* background: url("/carecat/이미지/격자.jpg")no-repeat center fixed;
+    background-size: cover; */
+    background-color: #F6F4EB;
+    height: 700px;
+    margin: 200px auto;
+    padding: 50px;
+    border-top: 5px solid #799BC4;
+    border-bottom: 5px solid #799BC4;
+
+}
+
+.main-title-img {
+    height: 100%;
+    width: 800px;
+}
+
+/* 시작 페이지 */
+.start-title {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.start-button {
+    border: 1px solid #4F82AB;
+    background-color: #4F82AB;
+    border-radius: 20px;
+    color: #ffffff;
+    width: 150px;
+    height: 90px;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 auto;
+}
+
+.start-button > a {
+    display: block;
+    text-align: center;
+    line-height: 90px;
+}
+
+/* 공통 */
+
+body {
+    background: url("./background.jpg")no-repeat center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-color: #F6F4EB; */
+    font-family: 'GmarketSansMedium';
+}
+
+/* 반복 디자인 */
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 3fr 0.5fr 0.5fr;
+    align-items: center;
+    justify-items: stretch;
+}
+
+.title-img {
+    height: 150px;
+    width: 200px;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #4F82AB;
+    padding: 20px 200px 20px 200px;
+    height: 200px;
+}
+
+.header-profile-name {
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+}
+
+.header-profile-img {
+    border-radius: 70%;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #4F82AB;
+}
+
+.main-box {
+    background-color: #F6F4EB;
+    height: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    border-top: 5px solid #799BC4;
+    border-bottom: 5px solid #799BC4;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 0.1fr auto;
+    width: 1200px;
+    height: 650px;
+    justify-content: center;
+    margin: auto;
+}
+
+.menu {
+    border: 3px solid #799BC4;
+    background-color: #799BC4;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #ffffff;
+    width: 40px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.content {
+    background-image: url("../img/content-back.jpg");
+    border: 5px solid #799BC4;
+    border-radius: 10px;
+    height: 600px;
+    width: 1000px;
+}
+
+/* 가입 페이지 */
+.join-title {
+    margin: 10px auto;
+    font-size: 1.5rem;
+    width: 500PX;
+    height: 50px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #799BC4;
+    border-radius: 50px;
+    color: white;
+}
+
+.join-img-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 1000px;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+.join-content {
+    align-items: center;
+}
+
+.cat-img {
+    border-radius: 70%;
+    width: 150px;
+    height: 150px;
+}
+
+/* 라디오 버튼 */
+/* .radio-img {
+    display: none;
+    background-image: url("./11zon_cropped-removebg-preview.png");
+}
+
+.radio-img + .on {
+    display: inline-block;
+    background: url("./11zon_cropped-removebg-preview.png") no-repeat;
+    cursor: pointer;
+}
+
+.radio-img:checked + .on {
+    background: url("./11zon_cropped-removebg-preview.png") no-repeat;
+}  */
+
+.join-img-box {
+    padding: 5px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.join-content-box {
+    margin: 20px auto;
+}
+
+.join-content {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    width: 1000px;
+    font-size: 2rem;
+    text-align: right;
+    align-items: baseline;
+    margin: 0 auto;
+    gap: 10px;
+} 
+
+.content-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+    width: 200px;
+}
+
+.content-title > input {
+    border: 3px solid #4F82AB;
+    border-radius: 10px;
+    font-size: 2rem;
+    outline: none;
+}
+
+.join-date {
+    width: 395px;
+}
+
+footer {
+    text-align: right;
+}
+
+.join-save {
+    display: inline-block;
+    border: 1px solid #4F82AB;
+    border-radius: 50px;
+    background-color: #4F82AB;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* 캘린더 */
+.page-point {
+    background-color: #98C8E5;
+}
+
+.calendar-dox{
+    border: 5px solid #799BC4;
+    border-radius: 10px;
+    height: 600px;
+    width: 1000px;
+    padding: 25px;
+}
+
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .calendar .weeks li {
+    font-weight: 500;
+    height: 2rem;
+  }
+  .calendar .days {
+    margin-bottom: 20px;
+    border: 1px solid #799bc4;
+  }
+  .calendar ul li {
+    /*#8*/
+    width: calc(100% / 7);
+    height: 4rem;
+    /*#9*/
+    position: relative;
+  }
+  .calendar .days li {
+    /*#10*/
+    z-index: 1;
+    /* margin-top: 30px; */
+    border: 1px solid #799bc4;
+    height: 95px;
+    /* cursor: pointer; */
+  }
+  
+  /*#11*/
+  .days li.inactive {
+    color: #aaa;
+  }
+  
+  .days li.active {
+    color: #fff;
+  }
