@@ -6,7 +6,7 @@ TITLE.style.color ='blue';
 
 // 태그명으로 요소를 선택하는 방법
 const H1 = document.getElementsByTagName('h1');
-// H1[1].style.color = 'green';
+H1[1].style.color = 'green';
 H1[1].style = 'color: green; font-size: 3rem; background: #5f5f5f;';
 console.log(H1[1]);
 
