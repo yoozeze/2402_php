@@ -92,26 +92,20 @@ const CSS_LI_ALL = document.querySelectorAll('li');
 console.log(CSS_LI_ALL);
 CSS_LI_ALL.forEach((val, key) => {
     if(key % 2 === 0){
-        val.style.color = 'blue';
-    } else {
         val.style.color = 'red';
+    } else {
+        val.style.color = 'blue';
     }
 });
-// 나라 방법2
+// 나라 방법
 const UL_LI_ODD = document.querySelectorAll('#ul li:nth-child(odd)');
 UL_LI_ODD.forEach(node => node.style.color = 'red');
 const UL_LI_EVEN = document.querySelectorAll('#ul li:nth-child(even)');
 UL_LI_EVEN.forEach(node => node.style.color = 'blue');
 
-
-
-
-
-
-
-
-
-
+// 강사님 방법
+const items = document.querySelectorAll('#ul > li');
+items.forEach((item, key) => (item.style.color = key % 2 === 0 ? 'red' : 'blue'));
 
 
 // CSS_LI_ALL.forEach(function(colorChange){
@@ -128,3 +122,58 @@ UL_LI_EVEN.forEach(node => node.style.color = 'blue');
 //         }
 //     }
 // })
+
+
+// ---------------------------------------------------------------------------------------
+// 새로운 요소 생성
+// 만들고 -> 위치지정 -> 삽입
+
+// createElement(태그명) : 새로운 요소 생성
+const NEW_LI = document.createElement('li');
+console.log(NEW_LI);
+NEW_LI.innerHTML = '광산게임';
+const NEW_LI1 = document.createElement('li');
+console.log(NEW_LI1);
+NEW_LI1.innerHTML = '광산게임2';
+
+const TARGET = document.querySelector('#ul'); // 삽입할 부모요소 선택
+
+// appendChild(노드) : 해당 부모 노드에 마지막 자식으로 노드 추가
+TARGET.appendChild(NEW_LI);
+TARGET.appendChild(NEW_LI1);
+
+// 동일한 형태의 요소를 여러개 추가하는 방법
+// for(let i = 0; i < 3; i++){
+//     const NEW_LI = document.createElement('li');
+//     console.log(NEW_LI);
+//     NEW_LI.innerHTML = '광산게임' + i;
+//     const TARGET = document.querySelector('#ul');
+//     TARGET.appendChild(NEW_LI);
+// }
+
+// insertBefore(새로운 노드, 기준 노드) : 해당 부모 노드의 자식인 기준 노드 앞에 새로운 노드 추가
+const NEW_LI2 = document.createElement('li');
+NEW_LI2.innerHTML = '굴착소년쿵야';
+const hyunSoo = document.querySelector('#ul > li:nth-child(3)');
+TARGET.insertBefore(NEW_LI2, hyunSoo);
+
+const NEW_LI3 = document.createElement('li');
+NEW_LI3.innerHTML = '프리셀1';
+const hyunSoo2 = document.querySelector('#ul > li:nth-child(5)');
+TARGET.insertBefore(NEW_LI3, hyunSoo2);
+
+const NEW_LI4 = document.createElement('li');
+NEW_LI4.innerHTML = '프리셀2';
+const hyunSoo3 = document.querySelector('#ul > li:nth-child(8)');
+TARGET.insertBefore(NEW_LI4, hyunSoo3);
+
+// 프리셀을 스페이스와 사과게임 사이에 넣기
+const NEW_LI5 = document.createElement('li');
+NEW_LI5.innerHTML = '프리셀3';
+const APPLE = document.querySelector('#apple');
+TARGET.insertBefore(NEW_LI5,APPLE);
+
+// removeChild() : 해당 부모 노드의 자식을 삭제
+TARGET.removeChild(NEW_LI3);
+const items2 = document.querySelectorAll('#ul > li');
+console.log(items2);
