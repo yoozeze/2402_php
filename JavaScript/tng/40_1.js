@@ -1,3 +1,5 @@
+// 내가한거
+
 const BTN = document.querySelector('#btn');
 BTN.addEventListener('click', () => (alert('안녕하세요. 숨어있는 div를 찾아보세요.')));
 
@@ -28,6 +30,5 @@ function hide(e) {
 
 DOKI.addEventListener('mouseenter', doki);
 DOKI.addEventListener('click', found);
-
 
 
