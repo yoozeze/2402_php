@@ -58,7 +58,13 @@ try {
     <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
 </head>
 <body>
-    <?php require_once(FILE_HEADER_INDEX); ?>
+    <header>
+        <div class="header-top">
+            <a href="./todo_index.php">WEEKLY</a>
+            <a href="./todo_add.php">ADD</a>
+        </div>
+        <h1>TO DO LIST</h1>
+    </header>
     <main>
         <?php 
         foreach($result as $item) {

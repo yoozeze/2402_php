@@ -16,7 +16,7 @@ function myMakeImg(data) {
         const CONTAINER = document.querySelector('.container');
 
         // img-container 생성
-        const ADD_CONTAINER = document.createElement('div');
+        const ADD_CONTAINER = document.createElement('li');
         ADD_CONTAINER.setAttribute('class', 'img-container');
         
         CONTAINER.appendChild(ADD_CONTAINER);
@@ -59,3 +59,20 @@ function add_box() {
 const DELETE = document.querySelector('.delete');
 DELETE.addEventListener('click', mydelete);
 DELETE.addEventListener('click', add_box);
+
+
+// function delete5(){
+//     for(let i = 0; i < 5; i++){
+//         const TARGET_2 = document.querySelector('.box2');
+//         const DELETE_5 = document.querySelector('.container > li:last-child');
+//         TARGET_2.removeChild(DELETE_5);
+//     };
+// }
+
+const CON = document.querySelector('.container');
+console.log(CON);
+const DELETE_5 = document.querySelector('ul > li:nth-last-child(-n + 5)');
+console.log(DELETE_5);
+
+// const DELETE5 = document.querySelector('.delete5');
+// DELETE5.addEventListener('click', delete5);

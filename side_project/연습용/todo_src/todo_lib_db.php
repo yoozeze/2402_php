@@ -9,6 +9,7 @@ function my_todo_db_conn(){
     return new PDO(MARIADB_DSN, MARIADB_USER, MARIADB_PASSWORD, $option);
 }
 
+// index 게시물 조회
 function db_select_todo_cnt(&$conn){
     $sql =
         " SELECT "
@@ -25,6 +26,7 @@ function db_select_todo_cnt(&$conn){
     return (int)$result[0]["cnt"];
 }
 
+// index 페이징네이션
 function db_select_todo_paging(&$conn, &$array_param){
     $sql =
         " SELECT "
@@ -47,58 +49,7 @@ function db_select_todo_paging(&$conn, &$array_param){
     return $result;
 }
 
-// pk로 게시글 정보 조회 
-function db_select_todo_no(&$conn, &$array_param){
-    $sql = 
-        " SELECT "
-        ."  no "
-        ."  ,today "
-        ."  ,day_goals "
-        ."  ,todo1 "
-        ."  ,todo2 "
-        ."  ,todo3 "
-        ."  ,todo4 "
-        ." FROM "
-        ."  todolist "
-        ." WHERE "
-        ."  no = :no "
-    ;
-
-    $stmt = $conn->prepare($sql);
-    $stmt->execute($array_param);
-    $result = $stmt->fetchAll();
-
-    return $result;
-}
-
-// Insert row to boards 게시판 테이블 레코드 작성처리
-function db_insert_todo(&$conn, &$array_param){
-    $sql =
-        " INSERT INTO todolist( "
-        ."  today "
-        ."  ,day_goals "
-        ."  ,todo1 "
-        ."  ,todo2 "
-        ."  ,todo3 "
-        ."  ,todo4 "
-        ." ) "
-        ." VALUES( "
-        ."  :today "
-        ."  ,:day_goals "
-        ."  ,:todo1 "
-        ."  ,:todo2 "
-        ."  ,:todo3 "
-        ."  ,:todo4 "
-        ." ) "
-    ;
-
-    $stmt = $conn->prepare($sql);
-    $stmt->execute($array_param);
-
-    return $stmt->rowCount();
-}
-
-// pk로 특정 게시글 삭제 처리
+// delete 페이지
 function db_delete_todo_no(&$conn, &$array_param){
     $sql =
         " UPDATE todolist "
@@ -109,27 +60,6 @@ function db_delete_todo_no(&$conn, &$array_param){
     ;
     $stmt = $conn->prepare($sql);
     $stmt->execute($array_param);
-
-    return $stmt->rowCount();
-}
-
-// pk로 특정 레코드 수정
-function db_update_todo_no(&$conn, &$array_param){
-    $sql =
-        " UPDATE todolist "
-        ."  SET "
-        ."  ,day_goals = :day_goals "
-        ."  ,todo1 = :todo1 "
-        ."  ,todo2 = :todo2 "
-        ."  ,todo3 = :todo3 "
-        ."  ,todo4 = :todo4 "
-        ."  ,updated_at = NOW() "
-        ." WHERE "
-        ."  no = :no "
-    ;
-    
-    $stmt = $conn->prepare($sql);
-    $stmt->execut($array_param);
 
     return $stmt->rowCount();
 }

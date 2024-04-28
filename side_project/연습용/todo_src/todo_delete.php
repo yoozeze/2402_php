@@ -94,7 +94,14 @@ try {
     <link rel="stylesheet" href="./999_to_do_list.css">
 </head>
 <body>
-    <?php require_once(FILE_HEADER); ?>
+    <header>
+        <div class="header-top">
+            <a href="./todo_index.php">WEEKLY</a>
+            <a href="./todo_add.php">ADD</a>
+            <a href="./todo_delete.php?no=<?php echo $no; ?>&page=<?php echo $page; ?>">DELETE</a>
+        </div>
+        <h1>TO DO LIST</h1>
+    </header>
     <main>
         <div class="main-top">
             <p>
