@@ -16,7 +16,7 @@ function myMakeImg(data) {
         const CONTAINER = document.querySelector('.container');
 
         // img-container 생성
-        const ADD_CONTAINER = document.createElement('li');
+        const ADD_CONTAINER = document.createElement('li'); // 원래 div
         ADD_CONTAINER.setAttribute('class', 'img-container');
         
         CONTAINER.appendChild(ADD_CONTAINER);
@@ -49,6 +49,7 @@ function mydelete() {
     // document.body : body에 접근할때
 }
 
+// 다시 추가하기 위한 div 재생성
 function add_box() {
     const TARGET = document.querySelector('.box2');
     const ADD_BOX = document.createElement('div');
@@ -61,6 +62,9 @@ DELETE.addEventListener('click', mydelete);
 DELETE.addEventListener('click', add_box);
 
 
+
+// 최근 등록한 사진 5개 삭제 
+
 // function delete5(){
 //     for(let i = 0; i < 5; i++){
 //         const TARGET_2 = document.querySelector('.box2');
@@ -69,10 +73,10 @@ DELETE.addEventListener('click', add_box);
 //     };
 // }
 
-const CON = document.querySelector('.container');
-console.log(CON);
-const DELETE_5 = document.querySelector('ul > li:nth-last-child(-n + 5)');
-console.log(DELETE_5);
+// const CON = document.querySelector('.container');
+// console.log(CON);
+// const DELETE_5 = document.querySelectorAll('ul > li:nth-last-child(-n + 5)');
+// console.log(DELETE_5);
 
 // const DELETE5 = document.querySelector('.delete5');
 // DELETE5.addEventListener('click', delete5);

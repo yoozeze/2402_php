@@ -50,6 +50,27 @@ function db_select_todo_paging(&$conn, &$array_param){
 }
 
 // delete 페이지
+function db_select_todo_no($conn, $array_param) {
+    $sql = 
+        " SELECT todolist "
+        ."  no "
+        ."  ,today "
+        ."  ,day_goals "
+        ."  ,todo "
+        ."  ,created_at "
+        ." FORM "
+        ."  todolist " 
+        ." WHERE "
+        ." no = :no "
+    ;
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+    $result = $stmt->fetchAll();
+
+    return $result; 
+}
+
 function db_delete_todo_no(&$conn, &$array_param){
     $sql =
         " UPDATE todolist "

@@ -1,0 +1,12 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+}
+.log-main {
+    margin: 15rem auto;
+    width: 300px;
+}

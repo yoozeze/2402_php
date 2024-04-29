@@ -1,0 +1,27 @@
+h1 {
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+}
+
+.main {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+.section {
+    width: 400px;
+    margin: auto;
+}
+
+#input-url {
+    width: 400px;
+}
+
+.article {
+    background-color: #8f8f8f;
+}

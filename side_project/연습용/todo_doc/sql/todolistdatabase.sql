@@ -1,5 +1,5 @@
-CREATE DATABASE todolist;
-USE todolist;
+CREATE DATABASE todo_list;
+USE todo_list;
 CREATE TABLE todolist(
 	NO  				INT 				PRIMARY KEY AUTO_INCREMENT
 	,today 			DATE				NOT NULL
