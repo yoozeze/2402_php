@@ -13,7 +13,7 @@ function my_todo_db_conn(){
 function db_select_todo_cnt(&$conn){
     $sql =
         " SELECT "
-        ." COUNT(no) as cnt "
+        ."  COUNT(no) as cnt "
         ." FROM "
         ."  todolist "
         ." WHERE "
@@ -79,6 +79,29 @@ function db_delete_todo_no(&$conn, &$array_param){
         ." WHERE "
         ."  no = :no "
     ;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+
+    return $stmt->rowCount();
+}
+
+// add 페이지
+function db_insert_todolsit(&$conn, &$array_param){
+    $sql =
+        " INSERT INTO todolist( "
+        ." no "
+        ." ,today "
+        ." ,day_goals "
+        ." ,todo "
+        ." ) "
+        ." VALUES( "
+        ." :no "
+        ." ,:today "
+        ." ,:day_goals "
+        ." ,:todo "
+        ." ) "
+    ;
+
     $stmt = $conn->prepare($sql);
     $stmt->execute($array_param);
 
