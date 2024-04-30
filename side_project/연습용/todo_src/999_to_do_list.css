@@ -41,7 +41,7 @@ a:hover {
 }
 
 header, main {
-    width: 800px;
+    width: 130vh;
     margin: 0 auto;
 }
 
@@ -86,7 +86,7 @@ h1 {
 }
 
 .container_list {
-    height: 600px;
+    height: 80%;
     display: grid;
     grid-template-columns: 0.3fr auto;
     gap: 10px;
@@ -248,4 +248,8 @@ input[class^="chk-"] {
 
 .date {
     width: 150px;
+}
+
+.plus {
+    border: none;
 }
