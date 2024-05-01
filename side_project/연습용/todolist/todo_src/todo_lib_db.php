@@ -89,16 +89,16 @@ function db_delete_todo_no(&$conn, &$array_param){
 function db_insert_todolsit(&$conn, &$array_param){
     $sql =
         " INSERT INTO todolist( "
-        ." no "
-        ." ,today "
-        ." ,day_goals "
-        ." ,todo "
+        ."  today "
+        ."  ,day_goals "
+        ."  ,todo "
+        ."  ,checked_com "
         ." ) "
         ." VALUES( "
-        ." :no "
-        ." ,:today "
-        ." ,:day_goals "
-        ." ,:todo "
+        ."  :today "
+        ."  ,:day_goals "
+        ."  ,:todo "
+        ."  ,0 "
         ." ) "
     ;
 
@@ -107,3 +107,5 @@ function db_insert_todolsit(&$conn, &$array_param){
 
     return $stmt->rowCount();
 }
+
+// detail 페이지

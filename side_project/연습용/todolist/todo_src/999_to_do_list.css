@@ -41,7 +41,7 @@ a:hover {
 }
 
 header, main {
-    width: 130vh;
+    width: 500px;
     margin: 0 auto;
 }
 
@@ -86,10 +86,11 @@ h1 {
 }
 
 .container_list {
-    height: 80%;
+    /* height: 80%; */
     display: grid;
     grid-template-columns: 0.3fr auto;
     gap: 10px;
+    justify-content: center;
 }
 
 .main-top {

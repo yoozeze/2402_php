@@ -23,7 +23,7 @@ if (REQUEST_METHOD === "POST") {
             throw new Exception("Parameter Error : ".implode(", ", $arr_err_param));
         }
 
-        $conn = my_db_conn();
+        $conn = my_todo_db_conn();
         $conn->beginTransaction();
 
         $arr_param = [
@@ -86,7 +86,7 @@ if (REQUEST_METHOD === "POST") {
                         <input type="date" class="date" name="today" id="today">
                     </div>
                     <div class="main-border">
-                        <label class="goals-title" for="content">
+                        <label class="goals-title" for="day_goals">
                             <div class="title">DAY GOALS</div>
                         </label>
                         <input type="text" name="day_goals" id="day_goals" class="day_goals">
@@ -100,35 +100,7 @@ if (REQUEST_METHOD === "POST") {
                             <label for="chk-box">
                                 <div><i class="fa-solid fa-check"></i></div>
                             </label>
-                            <input type="text" name="todo" value="" class="todo-text">
-                        </div>
-                        <div class="list">
-                            <input type="checkbox" name="chk-box1" id="chk-box1" class="chk-box0">
-                            <label for="chk-box1">
-                                <div><i class="fa-solid fa-check"></i></div>
-                            </label>
-                            <input type="text" name="todo" value="" class="todo-text">
-                        </div>
-                        <div class="list">
-                            <input type="checkbox" name="chk-box2" id="chk-box2" class="chk-box0">
-                            <label for="chk-box2">
-                                <div><i class="fa-solid fa-check"></i></div>
-                            </label>
-                            <input type="text" name="todo" value="" class="todo-text">
-                        </div>
-                        <div class="list">
-                            <input type="checkbox" name="chk-box3" id="chk-box3" class="chk-box0">
-                            <label for="chk-box3">
-                                <div><i class="fa-solid fa-check"></i></div>
-                            </label>
-                            <input type="text" name="todo" value="" class="todo-text">
-                        </div>
-                        <div class="list">
-                            <input type="checkbox" name="chk-box4" id="chk-box4" class="chk-box0">
-                            <label for="chk-box4">
-                                <div><i class="fa-solid fa-check"></i></div>
-                            </label>
-                            <input type="text" name="todo" value="" class="todo-text">
+                            <input type="text" name="todo" class="todo-text">
                         </div>
                     </div>
                     <div class="save">
