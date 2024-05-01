@@ -5,15 +5,11 @@ require_once(FILE_LIB_DB);
 
 if (REQUEST_METHOD === "POST") {
     try {
-        $no = isset($_POST["no"]) ? trim($_POST["no"]) : "";
         $today = isset($_POST["today"]) ? trim($_POST["today"]) : "";
         $day_goals = isset($_POST["day_goals"]) ? trim($_POST["day_goals"]) : "";
         $todo = isset($_POST["todo"]) ? trim($_POST["todo"]) : "";
 
         $arr_err_param = [];
-        if($no === ""){
-            $arr_err_param[] = "no";
-        }
         if($today === ""){
             $arr_err_param[] = "today";
         }
@@ -31,11 +27,11 @@ if (REQUEST_METHOD === "POST") {
         $conn->beginTransaction();
 
         $arr_param = [
-            "no" => $no
-            ,"today" => $today
+            "today" => $today
             ,"day_goals" => $day_goals
             ,"todo" => $todo
         ];
+
         $result = db_insert_todolsit($conn, $arr_param);
 
         if($result !== 1){
@@ -82,36 +78,54 @@ if (REQUEST_METHOD === "POST") {
         <h1>TO DO LIST</h1>
     </header>
     <main>
-        <form action="./todo_index.php" method="post">
+        <form action="./todo_add.php" method="POST">
             <div class="container_list">
                 <div class="main1">
                     <div class="main-border">
                         <div class="title">DATE</div>
-                        <input type="date" class="date">
+                        <input type="date" class="date" name="today" id="today">
                     </div>
                     <div class="main-border">
                         <label class="goals-title" for="content">
                             <div class="title">DAY GOALS</div>
                         </label>
-                        <input type="text" name="text" id="text">
+                        <input type="text" name="day_goals" id="day_goals" class="day_goals">
                     </div>
                 </div>
                 <div class="main2">
                     <div class="main-border">
                         <div class="title">TO DO</div>
                         <div class="list">
-                            <button type="submit" formaction="./todo_add.php" class= "plus fa-solid fa-square-plus">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-                                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                                </svg> -->
-                                <!-- <i class="fa-solid fa-square-plus"></i> -->
-                            </button>
+                            <input type="checkbox" name="chk-box" id="chk-box" class="chk-box0">
+                            <label for="chk-box">
+                                <div><i class="fa-solid fa-check"></i></div>
+                            </label>
                             <input type="text" name="todo" value="" class="todo-text">
                         </div>
                         <div class="list">
-                            <input type="checkbox" name="chk-box" id="chk-box" class="chk-box0">
-                            <label for="chk-box">
+                            <input type="checkbox" name="chk-box1" id="chk-box1" class="chk-box0">
+                            <label for="chk-box1">
+                                <div><i class="fa-solid fa-check"></i></div>
+                            </label>
+                            <input type="text" name="todo" value="" class="todo-text">
+                        </div>
+                        <div class="list">
+                            <input type="checkbox" name="chk-box2" id="chk-box2" class="chk-box0">
+                            <label for="chk-box2">
+                                <div><i class="fa-solid fa-check"></i></div>
+                            </label>
+                            <input type="text" name="todo" value="" class="todo-text">
+                        </div>
+                        <div class="list">
+                            <input type="checkbox" name="chk-box3" id="chk-box3" class="chk-box0">
+                            <label for="chk-box3">
+                                <div><i class="fa-solid fa-check"></i></div>
+                            </label>
+                            <input type="text" name="todo" value="" class="todo-text">
+                        </div>
+                        <div class="list">
+                            <input type="checkbox" name="chk-box4" id="chk-box4" class="chk-box0">
+                            <label for="chk-box4">
                                 <div><i class="fa-solid fa-check"></i></div>
                             </label>
                             <input type="text" name="todo" value="" class="todo-text">

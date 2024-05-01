@@ -76,7 +76,7 @@ h1 {
     font-size: 1.5rem;
 }
 
-#text {
+.day_goals {
     background-color: #f0d6e8;
     border: 3px #43083A;
     border-radius: 5px;
@@ -252,4 +252,14 @@ input[class^="chk-"] {
 
 .plus {
     border: none;
+    width: 25px;
+    height: 25px;
+    color: #FFFAFF;
+    object-fit: fill;
+    background-color: #C784B2;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
 }
