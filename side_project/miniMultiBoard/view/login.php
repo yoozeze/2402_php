@@ -22,7 +22,11 @@
         <!-- <form action="./free.html"> -->
         <form style= "width : 300px" action="/user/login" method="POST">
             <div class="mb-3">
-                <div class="form-text text-danger">에러에러</div>
+                <?php
+                    foreach($this->arrErrorMsg as $val) {
+                        echo '<div class="form-text text-danger">'.$val.'</div>';
+                    }
+                ?>
                 <label for="u_email" class="form-label">아이디</label>
                 <input type="text" class="form-control" id="u_email" name="u_email">
             </div>
