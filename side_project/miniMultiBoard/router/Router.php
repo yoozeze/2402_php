@@ -44,6 +44,16 @@ class Router {
             if($httpMethod === "GET") {
                 new UserController("logoutGet");
             }
+        } else if($url === "board/add") {
+            // 게시글 작성 관련
+            if($httpMethod === "POST") {
+                new BoardController("addPost");
+            }
+        } else if($url === "board/detail") {
+            // 상세 페이지
+            if($httpMethod === "GET") {
+                new BoardController("detailGet");
+            }
         }
 
         // 예외 처리
