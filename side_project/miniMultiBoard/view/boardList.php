@@ -13,35 +13,8 @@
     <title>자유게시판</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">미니보드</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            게시판
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <?php
-                                    foreach($this->arrBoardsNameInfo as $item) {
-                                ?>
-                                    <li><a class="dropdown-item" href="/board/list?b_type=<?php echo $item["b_type"]; ?>"><?php echo $item["bn_name"]; ?></a></li>
-                                <?php
-                                    }
-                                ?>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- 헤더 -->
+    <?php require_once("view/inc/header.php") ?>
 
     <div class="text-center mt-5 mb-5">
         <h1><?php echo $this->boardName ; ?></h1>
@@ -59,12 +32,12 @@
         </svg>
     </div>
 
-    <main class="main">
+    <main class="main" id="card<?php echo $item["b_id"]; ?>">
         <?php
             foreach($this->arrBoardList as $item) {
         ?>
             <div class="card">
-                <img src="<?php echo $item["b_img"]; ?>" class="card-img-top" alt="짱구">
+                <img src="<?php echo empty($item["b_img"]) ? "" : $item["b_img"]; ?>" class="card-img-top">
                 <div class="card-body">
                   <h5 class="cat-title"><?php echo $item["b_title"]; ?></h5>
                   <p class="card-text"><?php echo $item["b_content"]; ?></p>
@@ -86,18 +59,24 @@
     <div class="modal" tabindex="-1" id="modalDetail">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">개발자입니다.</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>살려주세요.</p>
-                <br>
-                <img src="./img/cRmy09fCmil6W_AKYhSNoAluIvm1gNrmGBpLacGMeef8RW4CXohhn9dC-Q8zP5RjiTvErkfQ1Z3vZUpaiFe1ig.gif" class="card-img-top" alt="톰과 제리">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            </div>
+            <form action="">
+                <div class="modal-header">
+                    <h5 class="modal-title">개발자입니다.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>살려주세요.</p>
+                    <br>
+                    <img src="" class="card-img-top">
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <div>
+                        <button type="button" class="btn btn-warning" id="my-btn-update">수정</button>
+                        <button type="button" class="btn btn-danger " id="my-btn-delete" >삭제</button>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </form>    
           </div>
         </div>
     </div>

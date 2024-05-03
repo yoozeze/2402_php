@@ -4,6 +4,7 @@ namespace router;
 
 use controller\UserController;
 use controller\BoardController;
+use lib\UserValidator;
 
 // 라우터 : 유저의 요청을 분석해서 해당 Controller로 연결해주는 클래스
 class Router {
@@ -53,6 +54,18 @@ class Router {
             // 상세 페이지
             if($httpMethod === "GET") {
                 new BoardController("detailGet");
+            }
+        } else if($url === "user/regist") {
+            // 회원 가입 페이지
+            if($httpMethod === "GET"){
+                new UserController("registGet");
+            } else {
+                new UserController("registPost");
+            }
+        } else if($url === "user/email") {
+            // 이메일 중복 체크
+            if($httpMethod === "POST") {
+                new UserController("chkEmailPost");
             }
         }
 
