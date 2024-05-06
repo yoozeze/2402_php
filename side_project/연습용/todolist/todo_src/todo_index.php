@@ -74,14 +74,14 @@ try {
                     <div class="main-border date"><?php echo $item["today"]; ?></div>
                 </div>
                 <div class="day-goals">
-                    <a href="./todo_list.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="main-border"><?php echo $item["day_goals"] ?></a>
+                    <a href="./todo_detail.php?no=<?php echo $item["no"]; ?>&page=<?php echo $page_num; ?>" class="main-border"><?php echo $item["day_goals"] ?></a>
                 </div>
             </div>
         <?php
         }
         ?>
         <div class="main-bottom">
-            <a href="./todo_index.php?page=<?php echo $prev_page_num ?>" class="main-border small-button">
+            <a href="./todo_index.php?page=<?php echo $prev_page_num; ?>" class="main-border small-button">
                 <i class="fa-solid fa-backward"></i>
             </a>
             <?php
@@ -91,7 +91,7 @@ try {
             <?php
             }
             ?>
-            <a href="./todo_index.php?page=<?php echo $next_page_num ?>" class="main-border small-button">
+            <a href="./todo_index.php?page=<?php echo $next_page_num; ?>" class="main-border small-button">
                 <i class="fa-solid fa-forward"></i>
             </a>
         </div>

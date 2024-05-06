@@ -124,7 +124,6 @@ h1 {
 
 .main2{
     display: grid;
-    grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
     gap: 10px;
 }
@@ -249,18 +248,4 @@ input[class^="chk-"] {
 
 .date {
     width: 150px;
-}
-
-.plus {
-    border: none;
-    width: 25px;
-    height: 25px;
-    color: #FFFAFF;
-    object-fit: fill;
-    background-color: #C784B2;
-    border-radius: 5px;
-    font-size: 30px;
-    text-align: center;
-    line-height: 25px;
-    cursor: pointer;
 }

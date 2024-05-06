@@ -50,18 +50,18 @@ function db_select_todo_paging(&$conn, &$array_param){
 }
 
 // delete 페이지
-function db_select_todo_no($conn, $array_param) {
+function db_select_todo_no(&$conn, &$array_param) {
     $sql = 
-        " SELECT todolist "
+        " SELECT "
         ."  no "
         ."  ,today "
         ."  ,day_goals "
         ."  ,todo "
-        ."  ,created_at "
-        ." FORM "
+        ."  ,checked_com "
+        ." FROM "
         ."  todolist " 
         ." WHERE "
-        ." no = :no "
+        ."  no = :no "
     ;
 
     $stmt = $conn->prepare($sql);
@@ -108,4 +108,20 @@ function db_insert_todolsit(&$conn, &$array_param){
     return $stmt->rowCount();
 }
 
-// detail 페이지
+// update 페이지
+function db_update_todolsit (&$conn, &$array_param){
+    $sql = 
+        " UPDATE todolist "
+        ." SET "
+        ."   day_goals "
+        ."  ,todo "
+        ."  ,updated_at = NOW() "
+        ." WHERE "
+        ."  no = :no "
+    ;
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+
+    return $stmt->rowCount();
+}

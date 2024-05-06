@@ -30,7 +30,9 @@ try {
         $arr_param = [
             "no" => $no
         ];
+
         $result = db_select_boards_no($conn, $arr_param);
+        
         if(count($result) !== 1){
             throw new Exception("Select Boards no count");
         }

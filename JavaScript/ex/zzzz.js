@@ -1,8 +1,14 @@
-const H1 = document.querySelector('h1');
-// 클릭
-H1.addEventListener('mousedown', e => {
-    e.target.style.backgroundColor = 'red';
-})
-H1.addEventListener('mouseup', e => {
-    e.target.style.backgroundColor = 'white';
-})
+function mytest() {
+    if(true) {
+        if(true) {
+            let test02 = 'test02';
+            // console.log(test01);
+            console.log(test02);
+        }
+        let test01 = 'test01';
+        console.log(test01);
+        console.log(test02);
+    }
+}
+
+mytest();
