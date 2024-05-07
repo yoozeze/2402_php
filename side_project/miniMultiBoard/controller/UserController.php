@@ -151,4 +151,82 @@ class UserController extends Controller { // extends 상속
         return base64_encode($pw.$email); // 숫자를 던져 주면 64글자로 암호화해줌
     }
 
+    // 회원 정보 수정 페이지
+    protected function updateUserGET() {
+        $requestData = [
+            "u_id" => $_SESSION["u_id"]
+        ];
+        $modelUsers = new UsersModel();
+        $resultUserInfo = $modelUsers->getUserInfo($requestData);
+        $_SESSION['u_name'] = $resultUserInfo;
+
+        // var_dump($_SESSION);
+        return "updateUser.php";
+    }
+
+    // 회원 정보 수정
+    protected function updateUserPost() {
+        $requestData = [
+            "u_id" => $_SESSION["u_id"]
+        ];
+
+        $modelUsers = new UsersModel();
+        $resultUserInfo = $modelUsers->getUserInfo($requestData);
+
+        $requestData = [
+            "u_id"      => $_SESSION["u_id"]
+            ,"u_pw"     => $_POST["u_pw"]
+            ,"u_name"   => $_POST["u_name"]
+        ];
+
+        $chekedData = [
+            "u_pw"     => $_POST["u_pw"]
+            ,"u_name"   => $_POST["u_name"]
+            ,"chk_u_pw" => $_POST["chk_u_pw"]
+        ];
+
+        // 유효성 체크
+        $resultValidator = UserValidator::chkValidator($chekedData);
+        if (count($resultValidator) > 0) {
+            $this->arrErrorMsg = $resultValidator;
+            return "updateUser.php";
+        }
+
+        // 비밀번호 암호화
+        $requestData["u_pw"] = $this->encryptionPassword($requestData["u_pw"], $resultUserInfo["u_email"]);
+
+        // 회원 정보 update 처리
+        $modelUsers->beginTransaction();
+        $resultUserUpdate = $modelUsers->updateUser($requestData);
+
+        if($resultUserUpdate === 1) {
+            $modelUsers->commit();
+            return "Location: /board/list";
+        } else {
+            $modelUsers->rollBack();
+            $this->arrErrorMsg = ["회원수정에 실패했습니다."];
+            return "updateUser.php";
+        }
+        var_dump($requestData);
+        return "Location: /user/updateUser";
+    }
+
 }
+
+
+    // 회원 정보 리스트
+    // protected $arrUserList = []; 
+
+    // protected function getUserList() {
+    //     $requestData = [
+    //         "u_id" => $_SESSION["u_id"]
+    //         ,"u_name" => $_POST["u_name"]
+    //     ];
+
+    //     $modelUsers = new UsersModel();
+    //     $this->arrUserList = $modelUsers->getUserList($requestData);
+
+    //     $modelUsers->destroy();
+
+    //     return "updateUser.php";
+    // }

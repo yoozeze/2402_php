@@ -17,7 +17,7 @@
     <?php require_once("view/inc/header.php") ?>
 
     <div class="text-center mt-5 mb-5">
-        <h1><?php echo $this->boardName ; ?></h1>
+        <h1><?php echo $this->boardName; ?></h1>
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="50" 
@@ -32,11 +32,11 @@
         </svg>
     </div>
 
-    <main class="main" id="card<?php echo $item["b_id"]; ?>">
+    <main class="main">
         <?php
             foreach($this->arrBoardList as $item) {
         ?>
-            <div class="card">
+            <div class="card" id="card<?php echo $item["b_id"]; ?>">
                 <img src="<?php echo empty($item["b_img"]) ? "" : $item["b_img"]; ?>" class="card-img-top">
                 <div class="card-body">
                   <h5 class="cat-title"><?php echo $item["b_title"]; ?></h5>
@@ -72,7 +72,7 @@
                 <div class="modal-footer justify-content-between">
                     <div>
                         <button type="button" class="btn btn-warning" id="my-btn-update">수정</button>
-                        <button type="button" class="btn btn-danger " id="my-btn-delete" >삭제</button>
+                        <button type="button" class="btn btn-danger " id="my-btn-delete" data-bs-dismiss="modal">삭제</button>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
                 </div>

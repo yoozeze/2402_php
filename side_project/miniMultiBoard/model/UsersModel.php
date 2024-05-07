@@ -68,5 +68,55 @@ class UsersModel extends Model {
             exit;
         }
     }
+
+    // 회원 정보 조회
+    public function getUserList(array $paramArr) {
+        try {
+            $sql = 
+                " SELECT "
+                ."  u_id "
+                ."  ,u_email "
+                ."  ,u_name "
+                ." FROM "
+                ."  users "
+                ." WHERE "
+                ."  u_id = :u_id "
+            ;
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+            $result = $stmt->fetchAll();
+
+            return $result;
+
+        } catch (\Throwable $th) {
+            echo "UsersModel >> getUserList, ".$th->getMessage();
+            exit;
+        }
+    }
+
+    // 회원 정보 수정
+    public function updateUser($paramArr) {
+        try {
+            $sql = 
+                " UPDATE users "
+                ." SET "
+                ."  u_name = :u_name "
+                ."  ,u_pw = :u_pw "
+                ." WHERE "
+                ."  u_id = :u_id "
+            ;
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+
+            return $stmt->rowCount();
+
+        } catch (\Throwable $th) {
+            echo "UserssModel >> removeUser(), ".$th->getMessage();
+            exit;
+        }
+    }
+
 }
 
