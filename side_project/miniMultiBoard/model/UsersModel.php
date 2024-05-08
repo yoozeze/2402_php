@@ -103,6 +103,7 @@ class UsersModel extends Model {
                 ." SET "
                 ."  u_name = :u_name "
                 ."  ,u_pw = :u_pw "
+                ."  ,updated_at = NOW() "
                 ." WHERE "
                 ."  u_id = :u_id "
             ;

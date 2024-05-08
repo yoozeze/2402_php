@@ -6,6 +6,15 @@ use model\UsersModel;
 use lib\UserValidator;
 
 class UserController extends Controller { // extends 상속
+    // 자신만 쓸 수 있어서 정보 보호
+    // private $userInfo = [];
+
+    // getter 유저 정보
+    // public function getUserInfo($key) {
+    //     return $this->userInfo[$key];
+    // }
+
+    
     // 로그인 페이지로 이동
     protected function loginGet() {
         return "login.php";
@@ -210,6 +219,48 @@ class UserController extends Controller { // extends 상속
         var_dump($requestData);
         return "Location: /user/updateUser";
     }
+
+    // 회원 정보 수정 처리 (강사님버전)
+    // protected function editPost() {
+    //     $requestData = [
+    //         "u_name" =>$_POST["u_name"]
+    //         ,"u_pw" =>$_POST["u_pw"]
+    //         ,"u_pw_chk" =>$_POST["u_pw_chk"]
+    //     ];
+    //     $selectData = [
+    //         "u_id" => $_SESSION["u_id"]
+    //     ];
+    //     $modelUsers = new UsersModel();
+    //     $this->userInfo = $modelUsers->getUserInfo($selectData);
+
+    //     유저 정보 획득
+    //     $resultValidator = UserValidator::chkValidator($requestData);
+    //     if (count($resultValidator) > 0) {
+    //         $this->arrErrorMsg = $resultValidator;
+    //         return "updateUser.php";
+    //     }
+
+
+    //     유저 정보 업데이트
+    //     $updateData = [
+    //         "u_id" => $_SESSION["u_id"]
+    //         ,"u_name" => $requestData["u_name"]
+    //         ,"u_pw" => $this->encryptionPassword($requestData["u_pw"], $this->getUserInfo("u_email"))
+    //     ];
+
+    //     $modelUsers->beginTransaction();
+    //     $modelUsers->updateUserInfo($updateData);
+    
+    //     if($rewultUpdate !== 1) {
+    //         $modelUsers->rollBack();
+    //         $this->arrErrorMsg = ["회원정보 수정 실패"];
+    //         return "userEdit.php";
+    //     }
+
+    //     $modelUsers->commit();
+    //     return "Location: board/list";
+    // }
+    
 
 }
 
