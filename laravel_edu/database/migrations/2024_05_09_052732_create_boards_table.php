@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     // 마이그레이션 파일 생성 : php artisan make:migration 파일명
-    // 마이그레이션 실행 : php artisan migrate
-    // 마이그레이션 롤백(직전의 마이그레이션 작업 되돌리기) : php artisan migrate:rollback
-    // 마이그레이션 리셋(모든 마이그레이션 작업 되돌리기) : php artisan migrate:reset
+    // 마이그레이션 실행 : php artisan migrate -> public function up() 실행
+    // 마이그레이션 롤백(직전의 마이그레이션 작업 되돌리기) : php artisan migrate:rollback -> public function down() 실행
+    // 마이그레이션 리셋(모든 마이그레이션 작업 되돌리기) : php artisan migrate:reset -> public function down() 실행
 
     /**
      * Run the migrations.
