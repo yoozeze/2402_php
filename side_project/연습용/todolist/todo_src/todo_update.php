@@ -6,12 +6,16 @@ require_once(FILE_LIB_DB);
 try {
     if($_SERVER["REQUEST_METHOD"] === "POST") {
         $no = isset($_POST["no"]) ? $_POST["no"] : "";
+        $page = isset($_POST["page"]) ? $_POST["page"] : "";
         $day_goals = isset($_POST["day_goals"]) ? trim($_POST["day_goals"]) : "";
         $todo = isset($_POST["todo"]) ? trim($_POST["todo"]) : "";
 
         $arr_err_parma = [];
         if($no === ""){
             $arr_err_param[] = "no";
+        }
+        if($page === ""){
+            $arr_err_param[] = "page";
         }
         if($day_goals === ""){
             $arr_err_param[] = "day_goals";
@@ -41,7 +45,7 @@ try {
 
         $conn->commit();
 
-        header("Location: todo_detail.php?no=". $no);
+        header("Location: todo_detail.php?no=".$no."&page=".$page);
         exit;
     }
 } catch (\Throwable $e) {
