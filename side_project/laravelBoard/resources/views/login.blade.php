@@ -5,12 +5,11 @@
 
 {{-- 바디에 vh 클래스 부여 --}}
 @section('bodyClassVh', 'vh-100')
-    {{-- <body class="vh-100">
-@endsection --}}
+    {{-- <body class="vh-100"> --}}
+{{-- @endsection --}}
 
 {{-- 메인 --}}
 @section('main')
-<!-- body class="vh-100-->
     <main class="log-main">
         <!-- main class="d-flex justify-content-center align-items-center h-75" -->
         <form action="{{route('post.login')}}" method="POST">
