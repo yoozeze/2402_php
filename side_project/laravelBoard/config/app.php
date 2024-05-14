@@ -177,6 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // 커스텀 프로바이더
+        App\Providers\MyViewProvider::class,
     ],
 
     /*

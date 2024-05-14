@@ -13,7 +13,7 @@
 @section('main')
 <!-- body class="vh-100-->
     <div class="text-center mt-5 mb-5">
-        <h1>자유게시판</h1>
+        <h1>{{$boardNameInfo->name}}</h1>
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="50" 
@@ -30,7 +30,7 @@
 
     <main class="main">
         @foreach ($data as $item)  
-            <div class="card">
+            <div class="card" id="card{{$item->id}}">
                 <img src="{{$item->img}}" class="card-img-top">
                 <div class="card-body">
                     <h5 class="cat-title">{{$item->title}}</h5>
@@ -59,9 +59,13 @@
             <div class="modal-body">
                 <p>살려주세요.</p>
                 <br>
-                <img src="./img/cRmy09fCmil6W_AKYhSNoAluIvm1gNrmGBpLacGMeef8RW4CXohhn9dC-Q8zP5RjiTvErkfQ1Z3vZUpaiFe1ig.gif" class="card-img-top" alt="톰과 제리">
+                <img src="" class="card-img-top">
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-warning" id="my-btn-update">수정</button>
+                    <button type="button" class="btn btn-danger " id="my-btn-delete" data-bs-dismiss="modal">삭제</button>
+                </div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
             </div>
           </div>
@@ -74,8 +78,7 @@
           <div class="modal-content">
             <form action="{{route('board.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                {{-- TODO --}}
-                <input type="hidden" name="type" value="0">
+                <input type="hidden" name="type" value="{{$boardNameInfo->type}}">
                 <div class="modal-header">
                   <input type="text" class="form-control" name="title" placeholder="제목을 입력하세요.">
                 </div>
