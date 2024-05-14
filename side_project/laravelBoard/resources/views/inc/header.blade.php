@@ -22,7 +22,7 @@
                     <a href="{{route('logout')}}" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
                 </div>
             @endauth
-
+            
             @guest
                 <a href="#" class="navbar-nav nav-link text-light" role="button">회원가입</a>
             @endguest
