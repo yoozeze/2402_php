@@ -3,7 +3,6 @@
   <!-- 헤더 -->
   <!-- 포릅스 Props : 자식 컴포넌트에게 props 속성을 이용해서 데이터를 전달 -->
   <HeaderComponent :nav="nav"/>
-  <ModalDetail :product="product" :flgModal="flgModal"/>
 
   <!-- <div class="nav">
     <a href="#" v-for="item in nav" :key="item.navName">
@@ -55,13 +54,26 @@
     </div> -->
 
     <!-- 위에 것 루프 -->
-    <div v-for="item in products" :key="item.productName">
+    <ProductList
+      :products = "products"
+      @myOpenModal = "myOpenModal"
+    >
+      <!-- slot : 자식쪽에서 <slot></slot>부분에 전달하여 자식 컴포넌트에서 렌더링 -->
+      <h3>부모쪽에서 정의한 슬롯</h3>
+    </ProductList>
+
+    <!-- <div v-for="item in products" :key="item.productName">
       <h4 @click="myOpenModal(item)">{{ item.productName }}</h4>
       <p>{{ item.price }} 원</p>
-    </div>
+    </div> -->
   </div>
 
   <!-- 모달 -->
+  <ModalDetail
+    :product="product"
+    :flgModal="flgModal"
+    @myCloseModal = "myCloseModal"
+  />
   <!-- <div class="bg_black" v-if="flgModal">
     <div class="bg_white">
       v-on:src 사용
@@ -76,9 +88,10 @@
 </template>
 
 <script setup>
-  import { ref, reactive } from 'vue';
+  import { ref, reactive, provide } from 'vue';
   import HeaderComponent from './components/HeaderComponent.vue'; // 자식 컴포넌트 import
   import ModalDetail from './components/ModalDetail.vue';
+  import ProductList from './components/ProductList.vue';
   // 데이터 바인딩
   // ref : 타입제한 없이 사용가능하나 일반적으로 string, number, boolean 과 같은 기본유형에 대한 반응적 참조를 위해 사용
   // import { ref } from 'vue';
@@ -109,9 +122,32 @@
   // const로 설정할 경우 값이 바뀔수가 없어서 let으로 설정
   let product = reactive({});
   function myOpenModal(item) {
-    flgModal.value = !flgModal.value;
+    flgModal.value = true;
     product = item;
   }
+
+  function myCloseModal() {
+    flgModal.value = false;
+  }
+
+  // 파라미터 연습용
+  // function myCloseModal(str) {
+  //   flgModal.value = false;
+  //   console.log(str);
+  // }
+
+  // ---------------------------------------------------------------
+  // provide / Inject 연습
+  const count = ref(0);
+
+  function addCount() {
+    count.value++;
+  }
+
+  provide('test', {
+    count
+    ,addCount
+  });
 
 </script>
 
