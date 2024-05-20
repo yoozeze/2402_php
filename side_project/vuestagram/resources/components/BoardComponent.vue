@@ -1,0 +1,9 @@
+<template>
+    <h1>Board 컴포넌트</h1>
+</template>
+
+<script setup>
+</script>
+
+<style>
+</style>
