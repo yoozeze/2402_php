@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\MyAuthException;
-use App\Exceptions\MyValidateException;
-use App\Models\User;
-use App\Utils\MyToken as UtilsMyToken;
 use MyToken;
 use MyUserValidate;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use App\Exceptions\MyAuthException;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
+use App\Exceptions\MyValidateException;
+use App\Utils\MyToken as UtilsMyToken;
 
 class UserController extends Controller
 {
@@ -65,4 +65,28 @@ class UserController extends Controller
         ];
         return response()->json($responseData, 200);
     }
+
+    /**
+     * 로그아웃 처리
+     *  
+     * @param Illuminate\Http\Request $request
+     * 
+     * @return response() json
+     */
+    public function logout(Request $request) {
+        $id = MyToken::getValueInPayload($request->bearerToken(), 'idt');
+
+        $userInfo = User::find($id);
+
+        MyToken::removeRefreshToken($userInfo);
+
+        $responseData = [
+            'code' => '0'
+            ,'msg' => ''
+            ,'data' => $userInfo
+        ];
+
+        return response()->json($responseData, 200);
+    }
+
 }

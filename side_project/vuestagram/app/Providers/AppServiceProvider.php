@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
-use App\Utils\MyEncrypt;
 use App\Utils\MyToken;
+use App\Utils\MyEncrypt;
 use App\Utils\MyUserValidate;
+use App\Utils\MyBoardValidate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->bind('MyEncrypt', function() {
             return new MyEncrypt();
+        });
+        $this->app->bind('MyBoardValidate', function() {
+            return new MyBoardValidate();
         });
     }
 
