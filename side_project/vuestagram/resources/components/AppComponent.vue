@@ -4,7 +4,7 @@
         <div class="header-container">
             <div class="header-content">
                 <div class="title">
-                    <router-link to="/"><h1>Vuestagram</h1></router-link>
+                    <router-link to="/board"><h1>Vuestagram</h1></router-link>
                 </div>
                 <img class="img-logo" src="/31_모코코콘2_빙글빙글_모코코.gif">
                 <img class="img-logo" src="/logo.gif">
