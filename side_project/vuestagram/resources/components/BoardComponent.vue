@@ -24,6 +24,7 @@
 <script setup>
     import { onBeforeMount, reactive, ref } from 'vue';
     import store from '../js/store';
+    import router from '../js/router';
 
     const modalFlg = ref(false);
     let boardData = reactive({});
@@ -49,26 +50,29 @@
 
     let flg = true;
     function boardScrollEvent() {
-        console.log('보드 스크롤 이벤트 시작');
-
-        if(flg && !store.state.noMoreBoardListFlg) {
-            flg = false;
-            const docHeight = document.documentElement.scrollHeight; // 문서 기준 총 Y축 위치
-            const winHeight = window.innerHeight; // 브라우저 창의 Y축 위치
-            const nowHeight = window.scrollY // 현재 스크롤 위치
-            const viewHeight = docHeight - winHeight; // 끝까지 스크롤 했을 때의 Y축 위치
-            // console.log('문서 Y축 : ' + docHeight);
-            // console.log('윈도우 Y축 : ' + winHeight);
-            // console.log('현재 Y축 : ' + nowHeight);
-            // console.log('뷰 Y축 : ' + viewHeight);
-            // console.log('----------------------');
-
-            // 스크롤이 최하단일 경우 처리
-            if(viewHeight <= nowHeight) {
-                store.dispatch('getAddBoardList');
+        console.log(router.currentRoute.value.path);
+        if(router.currentRoute.value.path == '/board') {
+            console.log('보드 스크롤 이벤트 시작');
+    
+            if(flg && !store.state.noMoreBoardListFlg) {
+                flg = false;
+                const docHeight = document.documentElement.scrollHeight; // 문서 기준 총 Y축 위치
+                const winHeight = window.innerHeight; // 브라우저 창의 Y축 위치
+                const nowHeight = window.scrollY // 현재 스크롤 위치
+                const viewHeight = docHeight - winHeight; // 끝까지 스크롤 했을 때의 Y축 위치
+                // console.log('문서 Y축 : ' + docHeight);
+                // console.log('윈도우 Y축 : ' + winHeight);
+                // console.log('현재 Y축 : ' + nowHeight);
+                // console.log('뷰 Y축 : ' + viewHeight);
+                // console.log('----------------------');
+    
+                // 스크롤이 최하단일 경우 처리
+                if(viewHeight <= nowHeight) {
+                    store.dispatch('getAddBoardList');
+                }
+    
+                flg = true;
             }
-
-            flg = true;
         }
 
         // 이벤트 제거 처리

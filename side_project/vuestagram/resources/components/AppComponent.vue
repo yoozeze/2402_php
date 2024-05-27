@@ -11,11 +11,11 @@
                 <img class="img-logo" src="/32_모코코콘2_늘푸른_spin.gif">
                 <div class="btn-group">
                     <div v-if="!$store.state.authFlg">
-                        <router-link to="/login"><button class="btn btn-header btn-bg-black" >로그인</button></router-link>
-                        <router-link to="/login"><button class="btn btn-header btn-bg-white" >회원가입</button></router-link>
+                        <router-link to="/login"><button class="btn btn-header btn-bg-black">로그인</button></router-link>
+                        <router-link to="/regist"><button class="btn btn-header btn-bg-white">회원가입</button></router-link>
                     </div>
                     <div v-else>
-                        <button  @click="$store.dispatch('logout')" class="btn btn-header btn-bg-black">로그아웃</button>
+                        <button @click="$store.dispatch('logout')" class="btn btn-header btn-bg-black">로그아웃</button>
                     </div>
                 </div>
             </div>

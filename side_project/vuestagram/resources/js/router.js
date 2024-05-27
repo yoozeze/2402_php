@@ -1,8 +1,9 @@
+import store from './store';
 import { createWebHistory, createRouter } from 'vue-router';
 import LoginComponent from '../components/LoginComponent.vue';
 import BoardComponent from '../components/BoardComponent.vue';
+import UserRegistration from '../components/UserRegistration.vue';
 import BoardCreateComponent from '../components/BoardCreateComponent.vue';
-import store from './store';
 
 function chkAuth(to, from, next) {
     if(!store.state.authFlg) {
@@ -39,6 +40,11 @@ const routes = [
         path: '/create',
         component: BoardCreateComponent,
         beforeEnter: chkAuth,
+    },
+    {
+        path: '/regist',
+        component: UserRegistration,
+        beforeEnter: chkAuthRetrun,
     },
 ];
 const router = createRouter({
