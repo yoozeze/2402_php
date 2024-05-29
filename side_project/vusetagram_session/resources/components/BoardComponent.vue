@@ -14,7 +14,7 @@
     </div>
 
     <!-- 리스트 -->
-    <div class="board-list-box">
+    <div  class="board-list-box">
         <div @click="openDetail(item)" v-for="(item, key) in $store.state.boardData" :key="key" class="item">
             <img :src="item.img">
         </div>
