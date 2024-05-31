@@ -14,7 +14,7 @@
           </div>
           <div v-else>
             <button @click="$store.dispatch('logout')" class="btn btn-header btn-bg-black">로그아웃</button>
-          </div>
+          </div> 
         </div>
       </div>
     </div>
