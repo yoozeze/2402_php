@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 a {
@@ -9,7 +10,7 @@ a {
 }
 
 nav {
-    background-color: #7fbe26;
+    background-color: black;
     display: grid;
     justify-content: space-between;
     align-items: center;
