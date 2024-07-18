@@ -18,7 +18,6 @@ class Fish {
     }
 }
 
-
 class Saba extends Fish {
     // 생성자
     public function __construct() {
@@ -31,6 +30,7 @@ class FlyingFish extends Fish {
     public function __construct() {
         parent::__construct("날치", "바다");
     }
+    
     public function flying() {
         echo $this->name."가 날아갑니다.\n";
     }
